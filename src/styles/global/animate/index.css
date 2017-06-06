@@ -1,0 +1,39 @@
+.showHide {
+    &-enter {
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+        &.showHide-enter-active {
+            opacity: 1;
+        }
+    }
+    &-leave {
+        opacity: 1;
+        transition: opacity .2s ease-in-out;
+        &.showHide-leave-active {
+            opacity: 0;
+        }
+    }
+}
+.showHide-long {
+    &-enter {
+        opacity: 0;
+        transition: opacity .1s ease;
+        &.showHide-long-enter-active {
+            opacity: 1;
+        }
+    }
+    &-appear {
+        opacity: 0;
+        transition: opacity .9s ease-in-out;
+        &.showHide-long-appear-active {            
+            opacity: 1;
+        }
+    }
+    &-leave {
+        opacity: 1;
+        &.showHide-long-leave-active {
+            transition: opacity .2s ease;
+            opacity: 0;
+        }
+    }
+}

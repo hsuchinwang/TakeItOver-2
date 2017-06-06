@@ -1,0 +1,57 @@
+%message {
+	@extend %qnote-center;
+	flex: 0 0 auto;
+    box-sizing: border-box;
+	background-color: rgba(50, 50, 55, 0.95);
+	padding: 24px;
+	/*outline: 1px solid #ffffff;*/
+	margin-top: 5px;
+	color: #ffffff;
+	@extend %font-size-16;
+    @extend %font-weight-normal;
+    position: relative;
+    z-index: 10;
+    .icon-loading {
+    	background-image: url(../images/q_loading.gif);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 21px 21px;
+		width: 21px;
+		height: 21px;
+    }
+    .content-msg {
+    	@extend %qnote-center-vertical;
+    	flex: 0 0 auto;
+    	padding-left: 16px;
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 8;
+        @extend %btn-close;
+    }
+}
+
+.qnote-msg-box {
+	display: flex;
+	flex-direction: column;
+}
+.qnote-msg-container {
+	display: flex;
+	justify-content: flex-end;
+}
+.qnote-msg {
+	@extend %message;
+	
+	&-box {
+		position: absolute;
+		right: 10px;
+		bottom: 0;
+	}
+
+	&-error {
+		color: #fff600;
+		@extend %font-weight-medium;
+	}
+}

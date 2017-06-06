@@ -1,0 +1,260 @@
+.note-content {
+  padding: 20px 0px 40px 0px;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.2;
+  outline: none;
+  background: #FFFFFF;
+
+  ul, ol, li, h1, h2, h3, h4, h5, h6, pre, p, span, blockquote, .table-container {
+    white-space: pre-wrap;
+    outline: none;
+  }
+
+  > ul, > ol {
+    padding-right: 55px !important;
+  }
+  ul, ol {
+    padding-left: 35px;
+    padding-right: 0px;
+    li {
+      position: relative;
+      .paragraph {
+        padding: 3px 0;
+      }
+      .ProseMirror-selectednode {
+        outline: none;
+        &:after {
+          content: "";
+          position: absolute;
+          left: -32px;
+          right: -2px; top: -2px; bottom: -2px;
+          border: 2px solid #8cf;
+        }
+      }
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: .3em;
+    }
+  }
+  hr {
+    position: relative;
+  }
+  .paragraph {
+    padding: 13px 55px;
+    margin: 0px;
+  }
+  a {
+    color: #2384d1;
+  }
+  img {
+    max-width: 100%;
+  }
+  blockquote {
+    padding-left: 16px;
+    border-left: 3px solid #eee;
+    margin-right: 0;
+    .paragraph {
+      padding: 0px;
+    }
+  }
+
+  > p, > h1, > h2, > h3, > h4, > h5, > h6, > pre, > .table-container, > .ns-blockquote-container,
+  > .ns-horizontalrule-container, > ul, > ol, .paragraph {
+    &:before {
+      position: absolute;
+      left: -50px;
+      text-shadow: 2px 0px 5px #AAAAAA;
+      text-align: left;
+      font-size: 12px;
+      max-width: 50px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: 16px;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+  }
+
+  > p, > h1, > h2, > h3, > h4, > h5, > h6, > pre, > .table-container, > .ns-blockquote-container,
+  > .ns-horizontalrule-container, .paragraph {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  > ul, > ol {
+    padding-left: 85px;
+    p, h1, h2, h3, h4, h5, h6, pre, .table-container {
+      padding-right: 55px;
+      white-space: pre-wrap;
+      &:before {
+        position: absolute;
+        left: 101%;
+        text-shadow: 2px 0px 5px #AAAAAA;
+        text-align: left;
+        font-size: 12px;
+        max-width: 50px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 16px;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .table-scrollview {
+    overflow-x: auto;
+    margin-bottom: 10px;
+    padding: 5px 5px 0 5px;
+    table {
+      table-layout: fixed;
+      border: none;
+      border-collapse: collapse;
+      tbody {
+        th, td {
+          border: 1px solid #d0d4d9;
+          min-height: 20px;
+          .paragraph {
+            min-height: 20px;
+            word-break: break-all;
+            word-wrap: break-word;
+            padding: 0px;
+            margin: 5px;
+          }
+        }
+        td {
+          position: relative;
+          .resizer {
+            position: absolute;
+            top: 0;
+            right: -3px;
+            width: 5px;
+            height: 100%;
+            z-index: 2;
+          }
+        }
+        .is-hover > .resizer {
+            background-color: #6495ED;
+            cursor: col-resize;
+        }
+        .column-resizeable {
+          .resizer {
+            background-color: #6495ED;
+          }
+        }
+        .border-left {
+          .resizer {
+            left: -3px;
+          }
+        }
+        .border-right {
+          .resizer {
+            right: -3px;
+          }
+        }
+        .deletion-hint {
+          background-color: #f9c4ca;
+        }
+        .horizontal-resizebar {
+          width: calc(100% - 55px);
+          height: 3px;
+          position: absolute;
+          left: 0;
+          background-color: #6495ED;
+        }
+      }
+    }
+  }
+
+  .ProseMirror-progressbar {
+    background-color: #cccccc;
+    width: 100%;
+    height: 6px;
+    margin: 3px 0;
+    > div {
+      background-color: #e61a1a;
+      width: 2%;
+      height: inherit;
+    }
+  }
+
+  .ns-file {
+    position: relative;
+    background-color: #eaeaea;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 33px;
+    padding: 8px 0;
+    /* user-select: none; */
+    cursor: pointer;
+    > .file-type {
+      min-width: 44px;
+      max-width: 44px;
+      height: 44px;
+      float: left;
+      margin: 0 10px;
+    }
+    > .description {
+      width: calc(100% - 104px);
+      > .title {
+        color: #2f2f2f;
+        font-size: 16px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      > .size {
+        color: #838383;
+        font-size: 10px;
+        line-height: 13px;
+      }
+    }
+    > .file-btn {
+      min-width: 20px;
+      max-width: 20px;
+      margin: 0px 10px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .ns-file + .ns-file {
+    margin-top: 5px;
+  }
+
+  .editing-img {
+    border: 2px solid #3399FF;
+  }
+  .ns-image {
+    position: relative;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+
+    .img {
+      position: relative;
+    }
+    .ns-image-btns {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      opacity: 0;
+      transition: opacity .3s ease-in;
+      justify-content: flex-end;
+      background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, .8));
+      width: 100%;
+
+      .image-btn {
+        margin: 5px;
+      }
+    }
+  }
+}

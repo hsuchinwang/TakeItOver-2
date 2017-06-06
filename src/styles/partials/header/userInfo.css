@@ -1,0 +1,83 @@
+.userInfo {
+    z-index: 4;
+    max-width: 280px;
+    min-width: 280px;
+    padding: 22px;
+    position: absolute;
+    border: 1px solid #b0b0b0;
+    background: rgba(255, 255, 255, 0.95);
+    outline: none;
+    color: #606060;
+    .name {
+        @extend %font-size-14;
+        color: #2f2f2f;
+    }
+    .text {
+        @extend %font-size-12;
+        > div > a {
+            @extend %qnote-link;
+        }
+    }
+    .url {
+        @extend %font-size-13;
+        @extend %qnote-link;
+    }
+    hr {
+        margin: 7px 0;
+        color: #dfdfdf;
+        border: 0;
+        height: 1px;
+        background-color: #dfdfdf;
+    }
+    .top {
+        @extend %layout-flex-left;
+        div.info {
+            @extend %layout-flex-1;
+            margin-bottom: auto;
+            > div {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                vertical-align: middle;
+                white-space: nowrap;
+                max-width: 163px;
+                line-height: 20px;
+            }
+        }
+        div.photo {
+            @extend .icon-header-ic_account_portrait;
+            margin: 0 12px 12px 0;
+            border: 1px solid #aeaeae;
+        }
+        img {
+            max-height: 70px;
+            max-width: 70px;
+            min-height: 70px;
+            min-width: 70px;
+        }
+    }
+    .bottom {
+        @extend %font-size-13;
+        div.count {
+            /*@extend %qnote-center-vertical;*/
+            width: 100%;
+            > div {
+                width: 100%;
+                line-height: 22px;
+                display: flex;
+                > div:first-child {
+                    width: 18px;
+                    margin-top: 2px;
+                }
+                > div:last-child {
+                    flex: 1;
+                    margin-left: 6px;
+                    @extend %qnote-no-wrap;
+                }
+            }
+        }
+        div.action {
+            margin-top: 12px;
+            @extend %layout-flex-right;
+        }
+    }
+}

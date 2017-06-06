@@ -1,0 +1,97 @@
+/* tooltip */
+.ProseMirror-tooltip {
+  .ProseMirror-menu {
+    width: fit-content;
+  }
+  &-back {
+    position: absolute;
+    top: 5px; left: 5px;
+    cursor: pointer;
+    &-wrapper {
+      padding-left: 12px;
+    }
+  }
+}
+
+.ProseMirror-menubar {
+  padding: 1px 4px;
+  position: relative;
+  margin: 0px 55px 3px 55px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  background-color: #FFFFFF;
+  border: 0px;
+  z-index: 3;
+  line-height: 38px;
+}
+
+.ProseMirror-menuitem > div {
+  cursor: pointer;
+  text-rendering: auto;
+  text-align: center;
+  min-width: 16px;
+  min-height: 16px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.ProseMirror-menuseparator {
+  margin: 0 -4px;
+  white-space: pre;
+  width: 1px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 10px;
+  border: 0px;
+}
+
+.ProseMirror-menuseparator:after {
+  content: "|";
+  color: #d2d2d2;
+  vertical-align: middle;
+  font-weight: 100;
+}
+
+.ProseMirror-menu-dropdown, .ProseMirror-menu-dropdown-menu {
+  font-size: 12px;
+  color: #2c2c2c;
+}
+
+.ProseMirror-menu-dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  text-align: left !important;
+  text-size: 12px;
+  &:hover {
+    color: #e61a1a;
+    .ProseMirror-triangle {
+      @extend .icon-editor-triangle_hover;
+    }
+  }
+}
+
+.ProseMirror-menu-dropdown-menu {
+  position: absolute;
+  background: #FFFFFF;
+  color: #2c2c2c;
+  padding: 16px 0;
+  z-index: 12;
+  border: 1px solid #b0b0b0;
+  outline: 0;
+}
+
+.ProseMirror-menu-dropdown-menu > .ProseMirror-menu-dropdown-item {
+  font-size: 13px;
+  padding: 0 22px;
+  color: #2f2f2f;
+  cursor: pointer;
+  &:hover {
+    background-color: #DEFEFE;
+  }
+}

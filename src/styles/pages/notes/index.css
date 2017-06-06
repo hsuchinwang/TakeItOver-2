@@ -1,0 +1,243 @@
+.qnote-note-container {
+    display: flex;
+    flex-direction: column;
+    @extend %qnote-animate;
+    background-image: url(../images/bg.png);
+    position: absolute;
+    left: 350px;
+    right: 0;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    &-header {
+        @extend %qnote-center;
+        min-height: 74px;
+        display: flex;
+        .header-container {
+            background-color: #e3e3e3;
+            color: #626262;
+            width: 85%;
+            min-width: 300px;
+            max-width: 1080px;
+            height: 74px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 10px 25px 10px 25px;
+            .breadcrumb-container {
+                display: flex;
+                padding-bottom: 5px;
+                .qnote-breadcrumb {
+                    flex: 1;
+                }
+                div[class^=icon-note-ic] {
+                    margin-left: 5px;
+                }
+            }
+            .title-container {
+                flex: 1;
+                position: relative;
+                @extend %qnote-center-vertical;
+                .title-box {
+                    @extend %qnote-center-vertical;
+                    flex: 1;
+                    overflow: hidden;
+                    .title {
+                        cursor: text;
+                        flex: 1 1;
+                        min-height: 20px;
+                        margin-left: 10px;
+                        @extend %qnote-no-wrap;
+                        @extend %font-size-20;
+                        @extend %font-weight-bold;
+                    }
+                    .edit-title {
+                        margin-left: 10px;
+                        outline: 0;
+                        flex: 1;
+                        @extend %font-size-20;
+                        color: #626262;
+                    }
+                    .qnote-note-toolbar {
+                        flex: 0 0 auto;
+                        @extend %qnote-center-vertical;
+                        div[class^=icon-toolbar-] {
+                            margin-left: 10px;
+                            cursor: pointer;
+                        }
+                    }
+                    .hearder-info {
+                        div {
+                            @extend %font-size-12;
+                            float: left;
+                            margin-left: 10px;
+                            color: #2f2f2f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .floating-bar {
+        position: fixed;
+        background: #e3e3e3;
+        visibility: hidden;
+        border-radius: 0 5px 5px 0;
+        div[class^=icon-toolbar-] {
+            margin: 10px;
+            cursor: pointer;
+        }
+    }
+    .qnote-editor-container {
+        flex: 1;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        .ns-editor {
+            @extends .ProseMirror;
+            position: relative;
+            width: 85%;
+            min-width: 300px;
+            max-width: 1080px;
+            min-height: 100%;
+            background-color: #FFFFFF;
+        }
+        .editing-status-bar {
+            position: relative;
+            top: -52px;
+            min-height: inherit;
+            .user-head-pic {
+                position: absolute;
+                right: -20px;
+                z-index: 2;
+                text-align: center;
+                transition: top 200ms ease;
+                display: flex;
+                align-items: center;
+                .user-caret-label {
+                    @extend %qnote-no-wrap;
+                    @extend %font-size-12;
+                    min-width: 42px;
+                    max-width: 42px;
+                    height: 13px;
+                    line-height: 14px;
+                    display: inline-block;
+                    padding: 1px 8px;
+                    color: #FFFFFF;
+                    position: relative;
+                    left: 2px;
+                }
+                .pic-container {
+                    border-radius: 100%;
+                    width: 26px;
+                    height: 26px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
+            }
+        }
+        @import './imageEditor.css';
+    }
+    .qnote-note-encrypt {
+        position: relative;
+        top: 10%;
+        width: 50%;
+        margin: auto;
+        .note-encrypt {
+            &-title {
+                font-size: 1.8em;
+                line-height: 2;
+            }
+            &-description {
+                font-size: 1.2em;
+                line-height: 1.5;
+            }
+            &-input {
+                line-height: 1.8em;
+                margin-right: 8px;
+                min-width: 18em;
+            }
+            &-errmsg {
+                color: red;
+                font-size: 1.2em;
+                line-height: 1.5;
+            }
+        }
+    }
+    .note-encrypt-page {
+        @extend %qnote-center;
+        flex-direction: column;
+        flex: 1;
+        .encrypt-page-container {
+            @extend %qnote-center;
+            flex: 1;
+            width: 85%;
+            min-width: 300px;
+            max-width: 1080px;
+            min-height: 100%;
+            background-color: #FFF;
+            .decrypt-box {
+                display: flex;
+                flex-direction: column;
+                @extend %font-size-15;
+                .title {
+                    @extend %qnote-center-vertical;
+                    .title-text {
+                        flex: 1;
+                        padding-left: 20px;
+                    }
+                }
+                .memo {
+                    color: #6c6c6c;
+                    margin-top: 10px;
+                }
+                .passwd-text {
+                    margin-top: 10px;
+                }
+                .err-msg {
+                    margin-top: 6px;
+                    color: #c1272d;
+                }
+                .btn-box {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+                    .submit {
+                        @extend %btn-submit;
+                    }
+                }
+            }
+        }
+    }
+    .note-empty-page {
+        @extend %qnote-center;
+        flex-direction: column;
+        flex: 1;
+        .icon-note-btn_empty-page_add_normal {
+            cursor: pointer;
+        }
+        .empty-msg {
+            margin-top: 28px;
+            color: #7a7a7a;
+            @extend %font-size-16;
+            max-width: 60%;
+        }
+    }
+    .note-readonly-page {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        > .note-container {
+            position: relative;
+            width: 85%;
+            min-width: 300px;
+            max-width: 1080px;
+            min-height: 100%;
+            background-color: #FFFFFF;
+        }
+    }
+}
+

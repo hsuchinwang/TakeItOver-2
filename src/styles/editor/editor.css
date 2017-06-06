@@ -1,0 +1,211 @@
+@import './icon.css';
+@import './content.css';
+
+/*.ProseMirror {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  @import './menu.css';
+  @import './tooltip.css';
+}
+
+
+.ProseMirror-selectednode {
+  outline: 2px solid #8cf;
+}
+
+.ProseMirror-drop-target {
+  position: absolute;
+  width: 1px;
+  background: #666666;
+  display: none;
+}
+*/
+
+.qnote-note-container {
+    .arrow {
+        position: absolute;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #2f2f2f;
+        z-index: 2;
+
+        &:after {
+            content: '';
+            position: absolute;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid white;
+            left: -6px;
+            top: -7px;
+        }
+    }
+
+    .tooltip {
+        position: absolute;
+        border: 1px solid #2f2f2f;
+        background-color: #ffffff;
+        padding: 0px 20px;
+        border-radius: 5px;
+        line-height: 40px;
+        z-index: 1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+
+        .tipContent {
+            max-width: 30vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.ProseMirror-container {
+    width: 85%;
+    max-width: 1080px;
+    background-color: #ffffff;
+
+    .ProseMirror-menubar {
+        height: 38px;
+        padding: 0px 6px;
+        border-bottom: 0;
+        z-index: 1;
+
+        .ProseMirror-menuitem {
+            line-height: 38px;
+            height: 38px;
+
+            .ProseMirror-icon {
+                vertical-align: -5px;
+            }
+
+            .ProseMirror-menu-active {
+                background: inherit;
+                border-radius: inherit;
+            }
+
+            .ProseMirror-menu-dropdown-wrap {
+                .ProseMirror-menu-dropdown  {
+                    font-size: 12px;
+                    color: #2c2c2c;
+                }
+
+                .ProseMirror-menu-dropdown-menu {
+                    padding: 10px 0px;
+
+                    .ProseMirror-menu-dropdown-item {
+                        font-size: 13px;
+                        color: #2c2c2c;
+                        line-height: 22px;
+                        padding: 0px 10px;
+
+                        &:hover {
+                            background: #defefe;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+    .ProseMirror {
+        @extend .note-content;
+
+        ul, ol {
+            margin: 0;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+
+    .unselectable {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+}
+
+
+/* icons */
+.ProseMirror-menu-active {
+    .icon-editor-strong {
+        @extend .icon-editor-strong_hover;
+    }
+
+    .icon-editor-em {
+        @extend .icon-editor-em_hover;
+    }
+
+    .icon-editor-strikethrough {
+        @extend .icon-editor-strikethrough_hover;
+    }
+
+    .icon-editor-underline {
+        @extend .icon-editor-underline_hover;
+    }
+
+    .icon-editor-link {
+        @extend .icon-editor-link_hover;
+    }
+
+    .icon-editor-insertImage {
+        @extend .icon-editor-insertImage_hover;
+    }
+
+    .icon-editor-insertFile {
+        @extend .icon-editor-insertFile_hover;
+    }
+
+    .icon-editor-insertHorizontalRule {
+        @extend .icon-editor-insertHorizontalRule_hover;
+    }
+
+    .icon-editor-insertTable {
+        @extend .icon-editor-insertTable_hover;
+    }
+
+    .icon-editor-wrapBulletList {
+        @extend .icon-editor-wrapBulletList_hover;
+    }
+
+    .icon-editor-wrapOrderedList {
+        @extend .icon-editor-wrapOrderedList_hover;
+    }
+
+    .icon-editor-wrapBlockQuote {
+        @extend .icon-editor-wrapBlockQuote_hover;
+    }
+
+    .icon-editor-undo {
+        @extend .icon-editor-undo_hover;
+    }
+
+    .icon-editor-redo {
+        @extend .icon-editor-redo_hover;
+    }
+
+    .icon-editor-lift {
+        @extend .icon-editor-lift_hover;
+    }
+
+    .icon-editor-increase_indent {
+        @extend .icon-editor-increase_indent:hover;
+    }
+}
+
+
+

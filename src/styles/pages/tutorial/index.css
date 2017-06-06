@@ -1,0 +1,180 @@
+.tutorial {
+	display: flex;  
+  user-select: none;  
+  z-index: 7;
+  position: relative;
+	width: 734px;
+	height: 338px;
+	background-color: #FFF;
+	border: 1px solid #b0b0b0;
+	box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.35);
+	box-sizing: border-box;
+	.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 8;
+    @extend %btn-close;
+  }
+  .left-box {
+  	display: flex;
+  	flex-direction: column;
+		flex: 1;
+		padding: 90px 51px 0px 50px;
+		.title {
+			@extend %font-size-24; 
+			color: #414141;
+		}
+		.description {
+			margin-top: 25px;
+			@extend %font-size-14; 
+			color: #414141;
+		}
+    .cb-box {
+      @extend %qnote-center-vertical;
+      margin-top: 15px;
+      @extend %font-size-14; 
+      color: #414141;
+    }
+		.buttons {
+			margin-top: 15px;
+			display: flex;
+	    .btn-next, .btn-skip {
+        @extend %btn-submit;
+        margin-left: 0;
+        margin-right: 8px;
+	    }
+		}
+  }
+  .right-box {
+  	width: 361px;
+  	.tutorial-img {
+  		margin-top: 42px;
+  		@extend .icon-tutorial-img_tutorial;
+  	}
+  }
+  &-start {
+  	width: 100%;
+  	height: 100%;
+  	user-select: none;  
+  	z-index: 7;
+  	position: relative;
+  	.tutorial-highline {
+  		border-radius: 90px;
+  		box-shadow: 0px 0px 8px #58c2ff;
+  	}
+  	.btn-start, .btn-next, .btn-skip, .btn-prev {
+      @extend %btn-submit;
+    }
+    .step-title {    	
+			@extend %qnote-center;
+			width: 100%;
+  		position: absolute;
+  		left: 0;
+  		bottom: 51px;
+  		.title {
+  			@extend %qnote-center;
+	    	@extend %font-size-22;
+	    	color: #FFF;
+				width: 320px;
+				height: 40px;
+				background-color: rgba(74, 74, 74, 0.9);
+  		}
+    }
+  	.step-bar {
+  		display: flex;
+  		height: 51px;
+  		width: 100%;
+  		position: absolute;
+  		left: 0;
+  		bottom: 0;
+  		background-color: #f0f0f0;
+  		padding-bottom: 6px;
+  		box-sizing: border-box;
+  		.left-box {
+  			@extend %qnote-center-vertical;
+				flex: 1;
+				padding-left: 33px;
+  		}
+  		.right-box {
+  			@extend %qnote-center-vertical;
+  			justify-content: flex-end;
+				flex: 1;
+				padding-right: 16px;
+				.btn-prev {
+					margin-right: 8px;
+				}
+				.step-status {
+					@extend %font-size-14;
+					color: #2f8dcf;
+					margin-right: 15px;
+				}
+  		}
+  		.progress {
+  			display: flex;
+  			position: absolute;
+  			bottom: 0;
+  			left: 0;
+  			width: 100%;
+  			height: 6px;
+  			background-color: #d9d9d9;
+  			.step {
+  				flex: 1;
+  				height: 100%;
+  			}
+  			.done {
+  				background-color: #369eff;
+  			}
+  		}
+  	}
+  	.circle {
+			border-radius: 50%;
+  	}
+  	.highline-content {
+  		position: absolute;
+  		box-shadow: 0px 0px 8px #58c2ff;
+  		.qnote-menu {
+		    @extend %qnote-center;
+    		background-color: #333333;
+		    height: 48px;
+		    width: 48px;
+		    cursor: pointer;
+			}
+	  	.qnote-add-note {
+	      @extend %qnote-center-vertical;
+	      background-color: #FFF;
+	      border-radius: 5px;
+	      border: 1px solid #e61a1a;
+	      height: 27px;
+	      padding: 0 12px 0 12px;
+	      cursor: pointer;
+	      div[class^=icon-header] {
+	        margin-right: 4px;
+	      }
+	      .text {
+	        color: #ff0000;
+	        @extend %font-size-12;
+	      }
+	    }  		
+  	}
+  	.highline-description {
+  		@extend %font-size-14;
+  		min-width: 200px;
+  		max-width: 380px;
+  		color: #484848;
+  		background-color: #FFF;
+  		padding: 18px;
+  		position: absolute;
+  		border: 1px solid #b0b0b0;
+  		box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+  		transition: all 500ms ease-in-out;
+      .title {
+        @extend %font-size-20; 
+      }
+      .msg {
+        @extend %font-size-14;
+        margin-top: 8px;
+      }
+  	}
+  }
+}

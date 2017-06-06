@@ -1,0 +1,33 @@
+.imageEditor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    @extend %layout-flex-center;
+    .container {
+        background: #fafafa;
+        width: 90%;
+        height: 90%;
+        border: 1px solid #b0b0b0;
+        @extend %layout-flex-vertical;
+        position: relative;
+        .header {
+            height: 30px;
+            .close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 11;
+                @extend %btn-close;
+            }
+        }
+        #imageEditor {
+            height: calc(100% - 30px);
+            width: 100%;
+            border: 0;
+        }
+    }
+}

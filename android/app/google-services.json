@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1072157588582",
+    "firebase_url": "https://takeitover-85825.firebaseio.com",
+    "project_id": "takeitover-85825",
+    "storage_bucket": "takeitover-85825.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072157588582:android:5ca05d25e144c659",
+        "android_client_info": {
+          "package_name": "com.banner.takeitover"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072157588582-e2q6h136l2f6jlu530vr1lhtga090ufb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB66qiHZinRtRwkxw2TVY-XNbi5Vni3d3k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

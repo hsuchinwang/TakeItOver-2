@@ -1,0 +1,86 @@
+.menu {
+    z-index: 4;
+    position: absolute;
+    border: 1px solid #b0b0b0;
+    background: rgba(255, 255, 255, 0.95);
+    outline: none;
+    max-width: 306px;
+    padding: 16px 0;
+    div {
+        .menu-item {
+            @extend %layout-flex-left;
+            @extend %font-weight-normal;
+            @extend %font-size-13;
+            cursor: pointer;
+            padding: 0 22px;
+            min-width: 160px;
+            max-width: 300px;
+            min-height: 28px;
+            max-height: 28px;
+            color: #2f2f2f;
+            &.more {
+                padding-right: 10px;
+                .text {
+                    @extend %layout-flex-1;
+                }
+                .icon-dropdown-ic_list_more {
+                    margin-left: 14px;
+                }
+                &.selected {
+                    @extend %font-weight-medium;
+                }
+            }
+            &:hover {
+                background-color: #defefd;
+                @extend %font-weight-medium;
+            }
+            &.disable {
+                color: #969696;
+            }
+        }
+        hr {
+            margin: 8px 0;
+            width: 80%;
+            border: 0;
+            border-top: 1px solid #cecece;
+        }
+    }
+}
+
+.submenu {
+    z-index: 4;
+    padding: 16px 0;
+    position: fixed;
+    border: 1px solid #b0b0b0;
+    background: rgba(255, 255, 255, 0.95);
+    outline: none;
+    overflow: auto;
+    &-item {
+        @extend %layout-flex-left;
+        @extend %font-weight-normal;
+        @extend %font-size-13;
+        cursor: pointer;
+        padding: 0 22px;
+        min-width: inherit;
+        min-height: 28px;
+        max-height: 28px;
+        color: #2f2f2f;
+        &.selected {
+            div.icon {
+                @extend .icon-dropdown-ic_dropdown_selected;
+            }
+        }
+        div.icon {
+            min-width: 16px;
+            max-height: 16px;
+            margin-right: 14px;
+        }
+        &:hover {
+            background-color: #defefd;
+            @extend %font-weight-medium;
+        }
+        &.disable {
+            color: #969696;
+        }
+    }
+}

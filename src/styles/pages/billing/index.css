@@ -1,0 +1,23 @@
+.billing {
+    overflow: auto;
+    &-container {
+        min-width: 1050px;
+        min-height: calc(100% - 1px);
+        background: linear-gradient(to bottom, #ffffff, #dbd8d7);
+        @extend %layout-flex-vertical;
+        .wrapper {
+            @extend %qnote-center;
+            @extend %layout-flex-1;
+            border-top: 1px solid #efeded;
+        }
+    }
+    &-footer {
+        @extend %qnote-center;
+        @extend %font-size-12;
+        color: #6a6a6a;
+        padding-bottom: 45px;
+        > div {
+            padding: 0 10px;
+        }
+    }
+}

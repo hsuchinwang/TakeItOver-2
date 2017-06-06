@@ -1,0 +1,43 @@
+{
+	"name": "TakeItOver",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest",
+		"ios-production": "react-native run-ios --configuration Release",
+		"an-production": "react-native run-android --variant=release",
+		"dev": "react-native run-ios",
+		"getjs": "curl http://localhost:8081/index.ios.bundle -o main.jsbundle",
+		"bundle-ios": "react-native bundle --entry-file index.ios.js --platform ios --bundle-output ./bundle/main.jsbundle --dev false --assets-dest ./bundle/",
+		"e-ios": "react-native run-ios",
+		"d-ios": "react-native run-ios --device 'Youngdi' ",
+		"r-ios": "react-native run-ios --configuration Release --device 'Youngdi'",
+		"e-an": "react-native run-android",
+		"r-an": "sh buildSignedApk.sh"
+	},
+	"dependencies": {
+		"react": "16.0.0-alpha.6",
+		"react-native": "0.44.2",
+		"react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
+		"react-native-drawer-layout-polyfill": "^1.3.1",
+		"react-native-fcm": "^6.2.3",
+		"react-native-modalbox": "^1.3.9",
+		"react-native-vector-icons": "^4.1.1",
+		"react-native-windows": "^0.41.0-rc.1",
+		"react-navigation": "^1.0.0-beta.10",
+		"react-redux": "5.0.4",
+		"redux": "3.6.0",
+		"socket.io-client": "^2.0.1"
+	},
+	"devDependencies": {
+		"babel-jest": "20.0.3",
+		"babel-preset-react-native": "1.9.2",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.6",
+		"remote-redux-devtools": "^0.5.11"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}

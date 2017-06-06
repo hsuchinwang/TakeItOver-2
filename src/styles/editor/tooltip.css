@@ -1,0 +1,102 @@
+&-tooltip {
+  position: absolute;
+  display: none;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  transition: width 0.4s ease-out, height 0.4s ease-out, left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;
+  opacity: 0;
+
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  background: #FFFFFF;
+  border: 1px solid #767676;
+  color: white;
+
+  z-index: 4;
+  &-pointer {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0;
+
+    transition: left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;
+    opacity: 0;
+
+    .pointer-inner {
+      position: relative;
+    }
+
+    z-index: 5;
+    &-above-border {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #767676;
+      .pointer-inner {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #FFFFFF;
+        top: -9px;
+        left: -8px;
+      }
+    }
+    &-below-border {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #767676;
+      .pointer-inner {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #FFFFFF;
+        left: -8px;
+        top: 1px;
+      }
+    }
+    &-right-border {
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid #767676;
+      .pointer-inner {
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 8px solid #FFFFFF;
+        left: -8px;
+        top: 1px;
+      }
+    }
+    &-left-border {
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid #767676;
+      .pointer-inner {
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 8px solid #FFFFFF;
+        left: -9px;
+        top: -8px;
+      }
+    }
+  }
+
+  &menu-linktext > a {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  input[type="text"], textarea {
+    background: #666;
+    color: white;
+    border: none;
+    outline: none;
+  }
+  input[type="text"] {
+    padding: 0 4px;
+  }
+  @import './inlinemenu.css';
+}

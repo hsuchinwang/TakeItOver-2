@@ -1,0 +1,62 @@
+.qnote-container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 52px);
+    .qnote-navbar {
+        display: flex;
+        flex-direction: column;
+        width: 48px;
+        background-color: #3c3c3c;
+        @import '../../partials/menu/index.css';
+        {
+            &-divide {
+                margin: 8px 14px 8px 14px;
+                height: 1px;
+                background-color: #535353;
+            }
+        }
+        .qnote-nav-top {
+            display: flex;
+            flex-direction: column;
+            @extend %qnote-center;
+            width: 100%;
+            margin-top: 16px;
+        }
+        .qnote-navbar-divide {
+            height: 1px;
+            background: #535353;
+            margin: 8px 14px;
+        }
+        .qnote-nav-center {
+            display: flex;
+            flex-direction: column;
+            @extend %qnote-center;
+            width: 100%;
+        }
+        .qnote-nav-bottom {
+            display: flex;
+            flex-direction: column;
+            @extend %qnote-center;
+            width: 100%;
+        }
+    }
+    .qnote-container-right {
+        flex: 1;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 100%;
+        min-height: 100%;
+        max-width: 100%;
+        @import './sidebar/index.css';
+        @import './index.css';
+    }
+    .qnote-container-full {
+        @extend %qnote-center;
+        width: 100%;
+        height: 100%;
+        font-size: 72px;
+        font-weight: bolder;
+        background-image: url(../images/bg.png);
+    }
+}

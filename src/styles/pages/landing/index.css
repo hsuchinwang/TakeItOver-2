@@ -1,0 +1,85 @@
+.qnote-landing {
+    @extend %qnote-center-horizontal;
+    user-select: none;
+    width: 100%;
+    min-width: 950px;
+    height: 100%;
+    overflow: auto;
+    .landing-container {
+        display: flex;
+        flex-direction: column;
+        .landing {
+            @extend %qnote-center-horizontal;
+            background-image: url(../images/landing.jpg);
+            background-position: center;
+            background-size: 1525px 400px;
+            width: 1525px;
+            height: 400px;
+            min-height: 400px;
+            position: relative;
+            &-box {
+                width: 950px;
+                min-width: 950px;
+                position: relative;
+                .qnap-logo {
+                    background-image: url(../images/qnap_logo.png);
+                    background-position: center;
+                    background-size: 250px 47px;
+                    width: 250px;
+                    height: 47px;
+                    margin-top: 10px;
+                }
+                .login-box {
+                    display: flex;
+                    flex-direction: column;
+                    width: 400px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    .title {
+                        @extend %font-size-28;
+                        @extend %font-weight-medium;
+                    }
+                    .content {
+                        @extend %font-size-16;
+                        @extend %font-weight-normal;
+                        margin-top: 15px;
+                    }
+                    .register-btn {
+                        @extend %btn-submit;
+                        margin-top: 20px;
+                        background-color: #092D58;
+                        color: #FFFFFF;
+                    }
+                    .login-btn {
+                        @extend %qnote-center-horizontal;
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        .login {
+                            transition: all 200ms ease-in-out;
+                            border-bottom: 1px solid transparent;
+                            font-weight: bolder;
+                            cursor: pointer;
+                            &:hover {
+                                border-bottom: 1px solid #000;
+                            }
+                            &:active {
+                                color: #6B6A6A;
+                                border-bottom: 1px solid #6B6A6A;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .qnote-log {
+            background-image: url(../images/pic_notes00.png);
+            background-position: center;
+            background-size: 980px 600px;
+            background-repeat: no-repeat;
+            width: 1525px;
+            height: 600px;
+            min-height: 600px;
+        }
+    }
+}

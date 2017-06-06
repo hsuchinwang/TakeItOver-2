@@ -1,0 +1,15 @@
+target 'TakeItOver' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
+  # Pods for firep
+  pod 'Firebase/Messaging', '3.17.0'
+  pod 'FirebaseAnalytics'
+  pod 'Firebase/Core'
+  target 'TakeItOverTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'Firebase/Messaging', '3.17.0'
+    pod 'FirebaseAnalytics'
+    pod 'Firebase/Core'
+  end
+end

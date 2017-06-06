@@ -1,0 +1,153 @@
+@import './itemMenu.css';
+.tag-sidebar-header {
+    display: flex;
+    flex-direction: column;
+    .head {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 38px 20px 38px;
+        box-sizing: border-box;
+    	.title {
+            @extend %font-size-15;
+            min-width: 25px;
+            color: #c3c3c3;
+            margin-bottom: 10px;
+    	}
+    }
+    .divide-line {
+        margin-bottom: 20px;
+        height: 1px;
+        background-color: #2f2f2f;
+    }
+}
+.tag-container {
+	display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+    &:hover {
+        overflow-y: auto;
+    }
+    .notebook-item {
+        box-sizing: border-box;
+        padding: 0 0 0 20px;
+        min-height: 26px;
+        position: relative;
+        .active-label {
+            position: absolute;
+            left: 0;
+            width: 2px;
+            height: 26px;
+        }
+	    .item-head {
+	    	@extend %qnote-center-vertical;
+            @extend %font-size-15;
+            box-sizing: border-box;
+            min-height: 26px;
+            color: #c3c3c3;
+            cursor: pointer;
+            position: relative;
+			.item-name {
+				margin-left: 6px;
+                display: flex;
+				.name {
+					max-width: 212px;
+                    overflow: hidden;
+                    overflow-wrap: break-word;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    word-wrap: break-word;
+                    .filter-text {
+                        color: #ff3837;
+                    }
+				}
+				.num {
+					margin-left: 6px;
+                    width: 20px;
+				}
+			}
+            .item-add-new {
+                height: 24px;
+                margin-left: 6px;
+                .item-rename {
+                    height: 24px;
+                    box-sizing: border-box;
+                }
+            }
+			.item-menu-div {
+				height: 100%;
+				width: 20px;
+			    position: absolute;
+				left: 280px;
+				top: 0;
+				@extend %qnote-center;
+			}
+	    }
+    }
+    .item-box-1 {
+    	.notebook-item {
+            padding: 0 0 0 56px;
+            .item-name {
+                .name {
+                    max-width: 194px;
+                }
+            }
+            .item-menu-div {
+                left: 244px;
+            }
+        }
+    }
+    .site-divide {
+    	height: 26px;
+        min-height: 26px;
+    }
+    .tree-collapsed {
+    	display: none;
+    }
+    .item-hover {
+		background-color: #393939;
+        .item-menu {
+            @extend .icon-sidebar-btn_menu_dropdown_normal;
+        }
+	}
+    .item-selected {
+        background-color: #262626;
+        .active-label {
+            background-color: #ff3837;
+        }
+        .item-name {
+            color: #ff3837;
+        }
+        .icon-sidebar-ic_menu_mountcloud_normal {
+            @extend .icon-sidebar-ic_menu_mountcloud_active;
+        }
+        .icon-sidebar-ic_menu_cloud_normal {
+            @extend .icon-sidebar-ic_menu_cloud_active;
+        }
+        .icon-sidebar-ic_menu_mountnas_normal {
+            @extend .icon-sidebar-ic_menu_mountnas_active;
+        }
+        .icon-sidebar-ic_menu_nas_normal {
+            @extend .icon-sidebar-ic_menu_nas_activel;
+        }
+        .icon-sidebar-ic_menu_evernote_normal {
+            @extend .icon-sidebar-ic_menu_evernote_active;
+        }
+        .icon-sidebar-ic_menu_onenote_normal {
+            @extend .icon-sidebar-ic_menu_onenote_active;
+        }
+        .icon-sidebar-ic_menu_tag_normal {
+            @extend .icon-sidebar-ic_menu_tag_active;
+        }
+        .icon-sidebar-line_beginning_open_normal {
+            @extend .icon-sidebar-line_beginning_open_active;
+        }
+        .icon-sidebar-line_beginning_close_normal {
+            @extend .icon-sidebar-line_beginning_close_active;
+        }
+    }
+}

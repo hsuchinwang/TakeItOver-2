@@ -1,0 +1,46 @@
+@media print {
+  body:not(.ProseMirror-content) {
+      visibility: hidden !important;
+  }
+  html, body {
+      width: 100%;
+      height: 100%;
+  }
+  * {
+    float: none !important;
+  }
+  .print-content {
+      float: none !important;
+      display: inline;
+      box-sizing: content-box !important;
+
+      position: absolute !important;
+      left: 0px !important;
+      top: 0px !important;
+      width: 90% !important;
+      max-width: 1048px !important;
+      height: 100% !important;
+
+      table {
+        border-collapse: collapse;
+      }
+
+      table, th, td {
+          border: 1px solid #d0d4d9 !important;
+      }
+      .ProseMirror.ProseMirror-content {
+        overflow: visible !important;
+        div:before, ol:before, ul:before , pre:before, h1:before, h2:before, h3:before, h4:before, h5:before, h6:before{
+          content: none !important;
+        }
+
+      }
+
+  }
+  .print-content * {
+      visibility: visible !important;
+      border-left: 0px !important;
+      page-break-after: always;
+      page-break-inside: avoid;
+  }
+}

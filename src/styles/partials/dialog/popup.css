@@ -1,0 +1,122 @@
+%popup {
+  @extend %dialog;
+  min-width: 340px;
+  max-width: 450px;
+  min-height: 140px;
+  outline: 1px solid #b0b0b0;
+  .container {
+    display: flex;
+    padding: 24px 24px 20px 24px;
+    div[class^=icon-] {
+      width: 32px;
+    }
+    .message {
+      @extend %font-size-14;
+      color: #2f2f2f;
+      flex: 1;
+      padding: 0 16px 0 16px;
+      display: flex;
+      flex-direction: column;
+      word-wrap: break-word;
+      .title {
+        @extend %font-weight-bold;
+        padding-bottom: 5px;
+      }
+      .text {
+        @extend %font-weight-normal;
+      }
+    }
+  }
+  .buttons {
+    @extend %buttons;
+    padding: 0 24px 24px 24px;
+  }
+}
+
+.popup {
+  &-confirm {
+    @extend %popup;
+  }
+  &-delete {
+    @extend %popup;
+    .message {
+      .text {
+        display: flex;
+        flex-direction: column;
+        .warning {
+          @extend %font-size-12;
+          color: #c1272d;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  &-closeImageEditorAlert,
+  &-setPublishedLinkPasswordAlert,
+  &-cancelPublishedLinkPassword,
+  &-stopShare {
+    @extend %popup;
+    width: 448px;
+    .message {
+      .title {
+        padding-bottom: 20px;
+      }
+      .text {
+        .description {
+          margin-bottom: 15px;
+        }
+        .nameList {
+          border: 1px solid #bfbfbf;
+          margin-left: 10px;
+          &.more {
+            margin-left: 0;
+            overflow: auto;
+            max-height: 300px;
+          }
+          .name-item {
+            @extend %font-size-14;
+            min-height: 30px;
+            max-height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+            max-width: 316px;
+            @extend %qnote-no-wrap;
+            @extend %font-weight-normal;
+            color: #525252;
+            &:nth-child(even) {
+              background-color: #ffffff;
+            }
+            &:nth-child(odd) {
+              background-color: #f4f4f4;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-invalidShare {
+    @extend %popup;
+    .text {
+      display: flex;
+      flex-direction: column;
+      .invalid-box {
+        display: flex;
+        flex-direction: column;
+        .invalid-content {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  &-migrate {
+    @extend %popup;
+    .container {
+      .message {
+        @extend %font-size-18;
+        .text {
+          > div { margin-bottom: 20px; }
+        }
+      }
+    }
+  }
+}

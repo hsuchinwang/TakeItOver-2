@@ -1,0 +1,150 @@
+.qnote-header {
+    user-select: none;
+    width: 100%;
+    height: 52px;
+    min-height: 52px;
+    position: relative;
+    &:after {
+        position: absolute;
+        width: 100%;
+        height: 8px;
+        background-image: linear-gradient(to right, #aa1717, #ff1b1b);
+        content: "";
+    }
+    &-logo {
+        @extend %qnote-center-vertical;
+        height: 44px;
+        position: absolute;
+        left: 30px;
+        top: 0;
+        padding-top: 8px;
+        cursor: pointer;
+        .icon {
+            @extend .icon-header-ic_header_logo;
+        }
+        .title {
+            display: flex;
+            margin-left: 12px;
+            @extend %font-size-24;
+            color: #b51212;
+            .name {
+                @extend %font-weight-bold;
+            }
+            .station {
+                @extend %font-weight-light;
+            }
+        }
+    }
+    &-nav {
+        @extend %qnote-center-vertical;
+        height: 44px;
+        position: absolute;
+        right: 25px;
+        top: 0;
+        padding-top: 8px;
+        .search-bar {
+            @extend %qnote-center-vertical;
+            margin-right: 25px;
+            .qnote-input-text {
+                width: 220px;
+                div[class^=icon-header-btn_header_search_] {
+                    margin-right: 0px;
+                }
+            }
+        }
+        .qnote-user {
+            &-acc {
+                color: #2f2f2f;
+                @extend %font-size-12;
+                cursor: pointer;
+            }
+            &-avatar {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .icon-header-ic_header_admin {
+            margin-right: 5px !important;
+        }
+        div[class^=icon-header] {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .icon-header-syncing {
+            background-image: url(../images/refresh_animation.gif);
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            min-height: 20px;
+        }
+        .divide-line {
+            width: 1px;
+            padding-top: 14px;
+            .line {
+                width: 1px;
+                height: 30px;
+                background-color: #2f2f2f;
+            }
+        }
+        .notification-container {
+            position: relative;
+            .notification-badge {
+                @extend %font-size-12;
+                position: absolute;
+                top: -2px;
+                left: 15px;
+                min-width: 14px;
+                height: 15px;
+                line-height: 15px;
+                text-align: center;
+                color: #FFFFFF;
+                padding: 0 3px;
+                background-color: #027dff;
+            }
+        }
+        .qnote-add-note {
+            @extend %qnote-center-vertical;
+            border-radius: 5px;
+            border: 1px solid #e61a1a;
+            height: 27px;
+            padding: 0 12px 0 12px;
+            margin-left: 25px;
+            cursor: pointer;
+            div[class^=icon-header] {
+                margin-right: 4px;
+            }
+            .text {
+                color: #ff0000;
+                @extend %font-size-12;
+            }
+            &:hover {
+                background-color: #e61a1a;
+                div[class^=icon-header] {
+                    @extend .icon-header-btn_header_addnotes_hover;
+                }
+                .text {
+                    color: #ffffff;
+                }
+            }
+            &:active {
+                background-color: #911616 !important;
+                border: 1px solid #911616;
+                div[class^=icon-header] {
+                    @extend .icon-header-btn_header_addnotes_hover;
+                }
+                .text {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .cursor {
+        position: absolute;
+        height: 2px;
+        background-color: #2f2f2f;
+        z-index: 7;
+    }
+    @import './notification.css';
+    @import './more.css';
+    @import './userInfo.css';
+}

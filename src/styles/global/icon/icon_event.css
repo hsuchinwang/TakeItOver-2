@@ -1,0 +1,171 @@
+.icon-menu-btn_category_mount_noraml:hover {
+	@extend .icon-menu-btn_category_mount_active;
+}
+.icon-menu-btn_category_notebook_normal:hover {
+	@extend .icon-menu-btn_category_notebook_active;
+}
+.icon-menu-btn_category_tag_normal:hover {
+	@extend .icon-menu-btn_category_tag_active;
+}
+.icon-menu-btn_category_share_normal:hover {
+	@extend .icon-menu-btn_category_share_active;
+}
+.icon-toolbar-btn_function_share_normal:hover {
+	@extend .icon-toolbar-btn_function_share_hover;
+}
+.icon-toolbar-btn_function_tag_normal:hover {
+	@extend .icon-toolbar-btn_function_tag_hover;
+}
+.icon-toolbar-btn_function_top_normal:hover {
+	@extend .icon-toolbar-btn_function_top_hover;
+}
+.icon-toolbar-btn_function_snapshot_normal:hover {
+	@extend .icon-toolbar-btn_function_snapshot_hover;
+}
+.icon-toolbar-btn_function_snapshot_management_normal:hover {
+	@extend .icon-toolbar-btn_function_snapshot_management_hover;
+}
+.icon-toolbar-btn_function_report_normal:hover {
+	@extend .icon-toolbar-btn_function_report_hover;
+}
+.icon-toolbar-btn_function_recyclebin_normal:hover {
+	@extend .icon-toolbar-btn_function_recyclebin_active;
+}
+.icon-toolbar-btn_function_more_normal:hover {
+	@extend .icon-toolbar-btn_function_more_hover;
+}
+.icon-toolbar-btn_function_favorite_normal:hover {
+	@extend .icon-toolbar-btn_function_favorite_hover;
+}
+.icon-toolbar-btn_function_encrypt_normal:hover {
+	@extend .icon-toolbar-btn_function_encrypt_hover;
+}
+.icon-toolbar-btn_function_info_normal:hover {
+	@extend .icon-toolbar-btn_function_info_hover;
+}
+.icon-toolbar-btn_function_print_normal:hover {
+	@extend .icon-toolbar-btn_function_print_hover;
+}
+.icon-header-btn_header_dorpdown_triangle_normal:hover {
+	@extend .icon-header-btn_header_dorpdown_triangle_hover;
+}
+.icon-header-btn_header_more_normal:hover {
+	@extend .icon-header-btn_header_more_hover;
+}
+.icon-header-btn_header_notification_normal:hover {
+	@extend .icon-header-btn_header_notification_hover;
+}
+.icon-header-btn_header_search_normal:hover {
+	@extend .icon-header-btn_header_search_hover;
+}
+.icon-sidebar-btn_menu_note_dropdown_normal:hover {
+	@extend .icon-sidebar-btn_menu_note_dropdown_hover;
+}
+.icon-sidebar-btn_menu_dropdown_normal:hover {
+	@extend .icon-sidebar-btn_menu_dropdown_hover;
+}
+.icon-sidebar-btn_menu_section_back_normal:hover {
+	@extend .icon-sidebar-btn_menu_section_back_hover;
+}
+.icon-sidebar-btn_add-note_normal:hover {
+	@extend .icon-sidebar-btn_add-note_hover;
+}
+.icon-sidebar-btn_menu_section_dropdown_normal:hover {
+	@extend .icon-sidebar-btn_menu_section_dropdown_hover;
+}
+.icon-sidebar-btn_menu_section_sorting_normal:hover {
+	@extend .icon-sidebar-btn_menu_section_sorting_hover;
+}
+.icon-sidebar-btn_menu_sync_normal:hover {
+	@extend .icon-sidebar-btn_menu_sync_hover_pressed;
+}
+.icon-sidebar-btn_tag_filter_normal:hover {
+	@extend .icon-sidebar-btn_tag_filter_hover;
+}
+.icon-sidebar-btn_tag_filter_normal:active {
+	@extend .icon-sidebar-btn_tag_filter_pressed;
+}
+.icon-dialog-icn_dialog_link_normal:hover {
+	@extend .icon-dialog-icn_dialog_link_hover;
+}
+.icon-input-btn_text_close:hover {
+	@extend .icon-input-btn_text_close_over;
+}
+.icon-input-btn_text_close:active {
+	@extend .icon-input-btn_text_close_pressed;
+}
+.icon-sidebar-ic_menu_evernote_normal:active {
+	@extend .icon-sidebar-ic_menu_evernote_active;
+}
+.icon-sidebar-ic_menu_favorites_normal:active {
+	@extend .icon-sidebar-ic_menu_favorites_active;
+}
+.icon-sidebar-ic_menu_mountnas_normal:active {
+	@extend .icon-sidebar-ic_menu_mountnas_active;
+}
+.icon-sidebar-ic_menu_nas_normal:active {
+	@extend .icon-sidebar-ic_menu_nas_active;
+}
+.icon-sidebar-ic_menu_notebook_normal:active {
+	@extend .icon-sidebar-ic_menu_notebook_active;
+}
+.icon-sidebar-ic_menu_defaultbook_normal:active {
+	@extend .icon-sidebar-ic_menu_defaultbook_active;
+}
+.icon-sidebar-ic_menu_onenote_normal:active {
+	@extend .icon-sidebar-ic_menu_onenote_active;
+}
+.icon-sidebar-ic_menu_section_normal:active {
+	@extend .icon-sidebar-ic_menu_section_active;
+}
+.icon-sidebar-ic_menu_defaultsection_normal:active {
+	@extend .icon-sidebar-ic_menu_defaultsection_active;
+}
+.icon-note-btn_empty-page_add_normal:hover {
+	@extend .icon-note-btn_empty-page_add_hover_pressed;
+}
+.icon-common-btn_edit_normal {
+	&:hover, &:active {
+		@extend .icon-common-btn_edit_hover_pressed;		
+	}
+}
+.icon-common-btn_preview_normal {
+	&:hover, &:active {
+		@extend .icon-common-btn_preview_hover;		
+	}
+}
+.icon-common-btn_remove_normal {
+	&:hover, &:active {
+		@extend .icon-common-btn_remove_hover;		
+	}
+}
+.icon-common-btn_restore {
+	&:hover, &:active {
+		@extend .icon-common-btn_restore_hover;		
+	}
+}
+.icon-common-btn_save {
+	&:hover, &:active {
+		@extend .icon-common-btn_save_hover;
+	}
+}
+.icon-common-btn_comparison_normal {
+	&:hover, &:active {
+		@extend .icon-common-btn_comparison_hover;
+	}
+}
+.icon-common-btn_extend_normal {
+	&:hover, &:active {
+		@extend .icon-common-btn_extend_hover;
+	}
+}
+.icon-preview-btn_present_next_normal {
+	&:hover, &:active {
+		@extend .icon-preview-btn_present_next_hover;
+	}
+}
+.icon-preview-btn_present_previous_normal {
+	&:hover, &:active {
+		@extend .icon-preview-btn_present_previous_hover;
+	}
+}

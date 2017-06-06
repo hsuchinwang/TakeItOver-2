@@ -1,0 +1,90 @@
+.fullscreen {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #FFF;
+    position: fixed;
+    left: 0;
+    top: 0;
+    @extend %layout-flex-vertical;
+    &:focus {
+        outline: 0;
+    }
+    .note-title {
+        @extend %font-size-26;
+        @extend %font-weight-bold;
+        padding: 0 125px;
+        margin-top: 25px;
+
+    }
+    .prev {
+        left: 30px;
+        @extend %fullscreen-buttons;
+    }
+    .next {
+        right: 30px;
+        @extend %fullscreen-buttons;
+    }
+    .content {
+        @extend %layout-flex-1;
+        padding: 0 74px;
+        margin-top: 25px;
+        overflow: auto;
+        font-size: calc(12px + 0.5vw);
+        &.encrypt {
+            display: flex;
+            > div {
+                @extend %layout-flex-1;
+            }
+        }
+        .qnote-editor-container {
+            flex: 1;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            .ns-editor {
+                @extends .ProseMirror;
+                position: relative;
+                width: 100%;
+                min-height: 100%;
+                background-color: #FFFFFF;
+            }
+            .editing-status-bar {
+                position: relative;
+                top: -52px;
+                min-height: inherit;
+                .user-head-pic {
+                    position: absolute;
+                    right: -20px;
+                    z-index: 2;
+                    text-align: center;
+                    transition: top 200ms ease;
+                    display: flex;
+                    align-items: center;
+                    .user-caret-label {
+                        @extend %qnote-no-wrap;
+                        @extend %font-size-12;
+                        min-width: 42px;
+                        max-width: 42px;
+                        height: 13px;
+                        line-height: 14px;
+                        display: inline-block;
+                        padding: 1px 8px;
+                        color: #FFFFFF;
+                        position: relative;
+                        left: 2px;
+                    }
+                    .pic-container {
+                        border-radius: 100%;
+                        width: 26px;
+                        height: 26px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,732 @@
+%iconBackground {
+	background-image: url(../images/editor_icon.png);
+}
+
+.icon-editor-_close_pressed:active {
+  @extend %iconBackground;
+  background-position: -143px -184px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-editor-btn_attach_preview:active {
+  @extend %iconBackground;
+  background-position: -173px -184px;
+  width: 19px;
+  height: 11px;
+  min-width: 19px;
+  min-height: 11px;
+}
+
+.icon-editor-align_center {
+  @extend %iconBackground;
+  background-position: -48px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-align_left {
+  @extend %iconBackground;
+  background-position: -176px -112px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-align_right {
+  @extend %iconBackground;
+  background-position: -16px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-attach_preview {
+  @extend %iconBackground;
+  background-position: -40px -132px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-editor-btn_dowload {
+  @extend %iconBackground;
+  background-position: 0px -132px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-editor-btn_editor_clearfomatting_normal {
+  @extend %iconBackground;
+  background-position: -32px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-btn_table_addgrid {
+  @extend %iconBackground;
+  background-position: -96px -132px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-btn_table_decreasegrid {
+  @extend %iconBackground;
+  background-position: -112px -132px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-calender {
+  @extend %iconBackground;
+  background-position: -128px -132px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-close {
+  @extend %iconBackground;
+  background-position: -158px -184px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-editor-default-head {
+  @extend %iconBackground;
+  background-position: -208px -26px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-editor-edit {
+  @extend %iconBackground;
+  background-position: 0px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-em {
+  @extend %iconBackground;
+  background-position: -16px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-em_hover {
+  @extend %iconBackground;
+  background-position: -32px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-align_center:hover {
+  @extend %iconBackground;
+  background-position: -192px -144px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-align_left:hover {
+  @extend %iconBackground;
+  background-position: -192px -160px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-align_right:hover {
+  @extend %iconBackground;
+  background-position: 0px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-attach_preview:hover {
+  @extend %iconBackground;
+  background-position: -60px -132px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-editor-btn_dowload:hover {
+  @extend %iconBackground;
+  background-position: -20px -132px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-editor-btn_table_addgrid:hover {
+  @extend %iconBackground;
+  background-position: -48px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-btn_table_decreasegrid:hover {
+  @extend %iconBackground;
+  background-position: -64px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-calender:hover {
+  @extend %iconBackground;
+  background-position: -80px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-clearfomatting:hover {
+  @extend %iconBackground;
+  background-position: -96px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-close:hover {
+  @extend %iconBackground;
+  background-position: -128px -184px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-editor-edit:hover {
+  @extend %iconBackground;
+  background-position: -192px -128px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-imageeditor:hover {
+  @extend %iconBackground;
+  background-position: -192px -112px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-increase_indent:hover {
+  @extend %iconBackground;
+  background-position: -128px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-remove:hover {
+  @extend %iconBackground;
+  background-position: -112px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-task:hover {
+  @extend %iconBackground;
+  background-position: -160px -132px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-testbgcolor:hover {
+  @extend %iconBackground;
+  background-position: -144px -132px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-textcolor:hover {
+  @extend %iconBackground;
+  background-position: -112px -184px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-ic_audio {
+  @extend %iconBackground;
+  background-position: 0px -88px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_doc {
+  @extend %iconBackground;
+  background-position: 0px -44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_excel {
+  @extend %iconBackground;
+  background-position: -44px -44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_hidden {
+  @extend %iconBackground;
+  background-position: -88px 0px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_image {
+  @extend %iconBackground;
+  background-position: -88px -44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_pdf {
+  @extend %iconBackground;
+  background-position: -44px 0px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_ppt {
+  @extend %iconBackground;
+  background-position: 0px 0px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_text {
+  @extend %iconBackground;
+  background-position: -44px -88px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_unknow {
+  @extend %iconBackground;
+  background-position: -88px -88px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_video {
+  @extend %iconBackground;
+  background-position: -132px 0px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_word {
+  @extend %iconBackground;
+  background-position: -132px -44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-ic_zip {
+  @extend %iconBackground;
+  background-position: -132px -88px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-editor-imageeditor {
+  @extend %iconBackground;
+  background-position: -64px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-increase_indent {
+  @extend %iconBackground;
+  background-position: -80px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertFile {
+  @extend %iconBackground;
+  background-position: -96px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertFile_hover {
+  @extend %iconBackground;
+  background-position: -112px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertHorizontalRule {
+  @extend %iconBackground;
+  background-position: -128px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertHorizontalRule_hover {
+  @extend %iconBackground;
+  background-position: -144px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertImage {
+  @extend %iconBackground;
+  background-position: -160px -152px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertImage_hover {
+  @extend %iconBackground;
+  background-position: -176px 0px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertTable {
+  @extend %iconBackground;
+  background-position: -176px -16px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-insertTable_hover {
+  @extend %iconBackground;
+  background-position: -176px -32px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-lift {
+  @extend %iconBackground;
+  background-position: -176px -48px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-lift_hover {
+  @extend %iconBackground;
+  background-position: -176px -64px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-link {
+  @extend %iconBackground;
+  background-position: -176px -80px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-link_hover {
+  @extend %iconBackground;
+  background-position: -176px -96px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-redo {
+  @extend %iconBackground;
+  background-position: -80px -132px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-redo_hover {
+  @extend %iconBackground;
+  background-position: -176px -128px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-remove {
+  @extend %iconBackground;
+  background-position: -176px -144px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-strikethrough {
+  @extend %iconBackground;
+  background-position: 0px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-strikethrough_hover {
+  @extend %iconBackground;
+  background-position: -16px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-strong {
+  @extend %iconBackground;
+  background-position: -32px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-strong_hover {
+  @extend %iconBackground;
+  background-position: -48px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-task {
+  @extend %iconBackground;
+  background-position: -64px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-testbgcolor {
+  @extend %iconBackground;
+  background-position: -80px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-textcolor {
+  @extend %iconBackground;
+  background-position: -96px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-triangle {
+  @extend %iconBackground;
+  background-position: -208px -13px;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+}
+
+.icon-editor-triangle_hover {
+  @extend %iconBackground;
+  background-position: -208px 0px;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+}
+
+.icon-editor-underline {
+  @extend %iconBackground;
+  background-position: -144px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-underline_hover {
+  @extend %iconBackground;
+  background-position: -160px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-undo {
+  @extend %iconBackground;
+  background-position: -176px -168px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-undo_hover {
+  @extend %iconBackground;
+  background-position: -192px 0px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-wrapBlockQuote {
+  @extend %iconBackground;
+  background-position: -192px -16px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-wrapBlockQuote_hover {
+  @extend %iconBackground;
+  background-position: -192px -32px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-wrapBulletList {
+  @extend %iconBackground;
+  background-position: -192px -48px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-wrapBulletList_hover {
+  @extend %iconBackground;
+  background-position: -192px -64px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-wrapOrderedList {
+  @extend %iconBackground;
+  background-position: -192px -80px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-editor-wrapOrderedList_hover {
+  @extend %iconBackground;
+  background-position: -192px -96px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}

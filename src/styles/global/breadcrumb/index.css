@@ -1,0 +1,28 @@
+%crumb {
+    @extend %qnote-center-vertical;
+    .crumb-text {
+        @extend %qnote-no-wrap;
+        @extend %font-size-14;
+        @extend %font-weight-normal;
+        margin-left: 3px;
+        max-width: 300px;
+    }
+}
+
+%breadcrumb {
+    @extend %qnote-center-vertical;
+	.qnote-crumb {
+        @extend %crumb;
+    }
+    .crumb-divide {
+        margin-left: 5px;
+        margin-right: 5px;
+        &:after {
+            content: ">";
+        }
+    }
+}
+
+.qnote-breadcrumb {
+    @extend %breadcrumb;
+}

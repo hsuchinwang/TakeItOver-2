@@ -1,0 +1,2721 @@
+%iconBackground {
+	background-image: url(../images/icon.png);
+}
+
+.icon-about-info {
+  @extend %iconBackground;
+  background-position: -613px -280px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-about-notesstation {
+  @extend %iconBackground;
+  background-position: -500px -402px;
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  min-height: 68px;
+}
+
+.icon-about-qnap {
+  @extend %iconBackground;
+  background-position: -361px -270px;
+  width: 66px;
+  height: 12px;
+  min-width: 66px;
+  min-height: 12px;
+}
+
+.icon-about-qts {
+  @extend %iconBackground;
+  background-position: -481px -352px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.icon-about-qts_info {
+  @extend %iconBackground;
+  background-position: -340px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-common-btn_close_samll_hover {
+  @extend %iconBackground;
+  background-position: -472px -282px;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+.icon-common-btn_close_samll_normal {
+  @extend %iconBackground;
+  background-position: -599px -550px;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+.icon-common-btn_close_samll_pressed {
+  @extend %iconBackground;
+  background-position: -472px -290px;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+.icon-common-btn_comparison_hover {
+  @extend %iconBackground;
+  background-position: -656px -608px;
+  width: 23px;
+  height: 22px;
+  min-width: 23px;
+  min-height: 22px;
+}
+
+.icon-common-btn_comparison_normal {
+  @extend %iconBackground;
+  background-position: -587px -608px;
+  width: 23px;
+  height: 22px;
+  min-width: 23px;
+  min-height: 22px;
+}
+
+.icon-common-btn_copy_hover_pressed {
+  @extend %iconBackground;
+  background-position: -691px -236px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-common-btn_copy_normal {
+  @extend %iconBackground;
+  background-position: -691px -254px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-common-btn_edit_hover_pressed {
+  @extend %iconBackground;
+  background-position: -691px -272px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-common-btn_edit_normal {
+  @extend %iconBackground;
+  background-position: -691px -290px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-common-btn_extend_hover {
+  @extend %iconBackground;
+  background-position: -610px -608px;
+  width: 23px;
+  height: 22px;
+  min-width: 23px;
+  min-height: 22px;
+}
+
+.icon-common-btn_extend_normal {
+  @extend %iconBackground;
+  background-position: -633px -608px;
+  width: 23px;
+  height: 22px;
+  min-width: 23px;
+  min-height: 22px;
+}
+
+.icon-common-btn_preview_hover {
+  @extend %iconBackground;
+  background-position: -280px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-common-btn_preview_normal {
+  @extend %iconBackground;
+  background-position: -200px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-common-btn_remove_hover {
+  @extend %iconBackground;
+  background-position: -709px -427px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-common-btn_remove_normal {
+  @extend %iconBackground;
+  background-position: -709px -443px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-common-btn_restore {
+  @extend %iconBackground;
+  background-position: -44px -652px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+.icon-common-btn_restore_hover {
+  @extend %iconBackground;
+  background-position: -66px -652px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+.icon-common-btn_save {
+  @extend %iconBackground;
+  background-position: 0px -652px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+.icon-common-btn_save_hover {
+  @extend %iconBackground;
+  background-position: -88px -652px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+.icon-common-ic_snapshot_title {
+  @extend %iconBackground;
+  background-position: -174px -652px;
+  width: 19px;
+  height: 19px;
+  min-width: 19px;
+  min-height: 19px;
+}
+
+.icon-common-ic_user {
+  @extend %iconBackground;
+  background-position: -369px -608px;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+}
+
+.icon-dialog-btn_close {
+  @extend %iconBackground;
+  background-position: -264px -638px;
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  min-height: 11px;
+}
+
+.icon-dialog-btn_close_over {
+  @extend %iconBackground;
+  background-position: -286px -638px;
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  min-height: 11px;
+}
+
+.icon-dialog-btn_close_pressed {
+  @extend %iconBackground;
+  background-position: -275px -638px;
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  min-height: 11px;
+}
+
+.icon-dialog-btn_menu_dropdown_normal {
+  @extend %iconBackground;
+  background-position: -709px -347px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-dialog-btn_menu_edit_normal {
+  @extend %iconBackground;
+  background-position: -709px -331px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-dialog-btn_menu_view_normal {
+  @extend %iconBackground;
+  background-position: -709px -315px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-dialog-ic_dropdown_selected {
+  @extend %iconBackground;
+  background-position: -709px -267px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-dialog-icn_dialog_link_hover {
+  @extend %iconBackground;
+  background-position: -260px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-dialog-icn_dialog_link_normal {
+  @extend %iconBackground;
+  background-position: 0px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-dropdown-btn_triangle_down {
+  @extend %iconBackground;
+  background-position: -20px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-dropdown-btn_triangle_up {
+  @extend %iconBackground;
+  background-position: -40px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-dropdown-ic_dropdown_selected {
+  @extend %iconBackground;
+  background-position: -709px -251px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-dropdown-ic_list_more {
+  @extend %iconBackground;
+  background-position: -709px -534px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-filepreview-back {
+  @extend %iconBackground;
+  background-position: -647px -220px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-back_active {
+  @extend %iconBackground;
+  background-position: -647px -132px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-download {
+  @extend %iconBackground;
+  background-position: -396px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-download_active {
+  @extend %iconBackground;
+  background-position: -352px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-extend {
+  @extend %iconBackground;
+  background-position: -220px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-extend_active {
+  @extend %iconBackground;
+  background-position: -176px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_audio {
+  @extend %iconBackground;
+  background-position: 0px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_audio_2x {
+  @extend %iconBackground;
+  background-position: -264px -402px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_doc {
+  @extend %iconBackground;
+  background-position: -44px -608px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_doc_2x {
+  @extend %iconBackground;
+  background-position: -176px -402px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_excel {
+  @extend %iconBackground;
+  background-position: -176px -608px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_excel_2x {
+  @extend %iconBackground;
+  background-position: -120px -282px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_hidden {
+  @extend %iconBackground;
+  background-position: -88px -608px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_hidden_2x {
+  @extend %iconBackground;
+  background-position: -88px -402px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_image {
+  @extend %iconBackground;
+  background-position: -647px -440px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_image_2x {
+  @extend %iconBackground;
+  background-position: -481px -176px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_pdf {
+  @extend %iconBackground;
+  background-position: -647px -352px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_pdf_2x {
+  @extend %iconBackground;
+  background-position: -481px 0px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_ppt {
+  @extend %iconBackground;
+  background-position: -647px -264px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_ppt_2x {
+  @extend %iconBackground;
+  background-position: -296px -282px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_text {
+  @extend %iconBackground;
+  background-position: -647px -176px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_text_2x {
+  @extend %iconBackground;
+  background-position: 0px -402px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_unknow {
+  @extend %iconBackground;
+  background-position: -647px -88px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_unknow_2x {
+  @extend %iconBackground;
+  background-position: -208px -282px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_video {
+  @extend %iconBackground;
+  background-position: -647px 0px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_video_2x {
+  @extend %iconBackground;
+  background-position: -384px -282px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_word {
+  @extend %iconBackground;
+  background-position: -647px -308px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_word_2x {
+  @extend %iconBackground;
+  background-position: -481px -88px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-filetype-ic_zip {
+  @extend %iconBackground;
+  background-position: -647px -396px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-filetype-ic_zip_2x {
+  @extend %iconBackground;
+  background-position: -481px -264px;
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+}
+
+.icon-filepreview-back:hover {
+  @extend %iconBackground;
+  background-position: -647px -484px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-download:hover {
+  @extend %iconBackground;
+  background-position: -647px -528px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-extend:hover {
+  @extend %iconBackground;
+  background-position: -132px -608px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-left:hover {
+  @extend %iconBackground;
+  background-position: -569px 0px;
+  width: 44px;
+  height: 70px;
+  min-width: 44px;
+  min-height: 70px;
+}
+
+.icon-filepreview-max:hover {
+  @extend %iconBackground;
+  background-position: -220px -608px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-newtab:hover {
+  @extend %iconBackground;
+  background-position: 0px -608px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-play_left:hover {
+  @extend %iconBackground;
+  background-position: -268px -490px;
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+}
+
+.icon-filepreview-play_right:hover {
+  @extend %iconBackground;
+  background-position: -392px -490px;
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+}
+
+.icon-filepreview-right:hover {
+  @extend %iconBackground;
+  background-position: -569px -210px;
+  width: 44px;
+  height: 70px;
+  min-width: 44px;
+  min-height: 70px;
+}
+
+.icon-filepreview-thumbnail:hover {
+  @extend %iconBackground;
+  background-position: -308px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-thumbnail_dropdown:hover {
+  @extend %iconBackground;
+  background-position: -264px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-left {
+  @extend %iconBackground;
+  background-position: -569px -280px;
+  width: 44px;
+  height: 70px;
+  min-width: 44px;
+  min-height: 70px;
+}
+
+.icon-filepreview-left_active {
+  @extend %iconBackground;
+  background-position: -569px -350px;
+  width: 44px;
+  height: 70px;
+  min-width: 44px;
+  min-height: 70px;
+}
+
+.icon-filepreview-max {
+  @extend %iconBackground;
+  background-position: -132px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-max_active {
+  @extend %iconBackground;
+  background-position: -88px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-newtab {
+  @extend %iconBackground;
+  background-position: -44px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-newtab_active {
+  @extend %iconBackground;
+  background-position: -647px -44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-play_left {
+  @extend %iconBackground;
+  background-position: -454px -490px;
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+}
+
+.icon-filepreview-play_left_active {
+  @extend %iconBackground;
+  background-position: -206px -490px;
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+}
+
+.icon-filepreview-play_right {
+  @extend %iconBackground;
+  background-position: -144px -490px;
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+}
+
+.icon-filepreview-play_right_active {
+  @extend %iconBackground;
+  background-position: -330px -490px;
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  min-height: 62px;
+}
+
+.icon-filepreview-progress {
+  @extend %iconBackground;
+  background-position: -317px -608px;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+}
+
+.icon-filepreview-progress_active {
+  @extend %iconBackground;
+  background-position: -343px -608px;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+}
+
+.icon-filepreview-right {
+  @extend %iconBackground;
+  background-position: -569px -140px;
+  width: 44px;
+  height: 70px;
+  min-width: 44px;
+  min-height: 70px;
+}
+
+.icon-filepreview-right_active {
+  @extend %iconBackground;
+  background-position: -569px -70px;
+  width: 44px;
+  height: 70px;
+  min-width: 44px;
+  min-height: 70px;
+}
+
+.icon-filepreview-thumbnail {
+  @extend %iconBackground;
+  background-position: -440px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-thumbnail_active {
+  @extend %iconBackground;
+  background-position: -484px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-thumbnail_dropdown {
+  @extend %iconBackground;
+  background-position: -528px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-filepreview-thumbnail_dropdown_active {
+  @extend %iconBackground;
+  background-position: -572px -564px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.icon-header-btn_header_addnotes_hover {
+  @extend %iconBackground;
+  background-position: -599px -456px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-header-btn_header_addnotes_normal {
+  @extend %iconBackground;
+  background-position: -679px -608px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-header-btn_header_dorpdown_triangle_hover {
+  @extend %iconBackground;
+  background-position: -60px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-btn_header_dorpdown_triangle_normal {
+  @extend %iconBackground;
+  background-position: -80px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-btn_header_more_hover {
+  @extend %iconBackground;
+  background-position: -100px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-btn_header_more_normal {
+  @extend %iconBackground;
+  background-position: -120px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-btn_header_notification_hover {
+  @extend %iconBackground;
+  background-position: -140px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-btn_header_notification_normal {
+  @extend %iconBackground;
+  background-position: -160px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-btn_header_search_hover {
+  @extend %iconBackground;
+  background-position: -599px -432px;
+  width: 13px;
+  height: 12px;
+  min-width: 13px;
+  min-height: 12px;
+}
+
+.icon-header-btn_header_search_normal {
+  @extend %iconBackground;
+  background-position: -599px -444px;
+  width: 13px;
+  height: 12px;
+  min-width: 13px;
+  min-height: 12px;
+}
+
+.icon-header-btn_header_search_on {
+  @extend %iconBackground;
+  background-position: -599px -420px;
+  width: 13px;
+  height: 12px;
+  min-width: 13px;
+  min-height: 12px;
+}
+
+.icon-header-ic_account_note {
+  @extend %iconBackground;
+  background-position: -211px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-header-ic_account_portrait {
+  @extend %iconBackground;
+  background-position: -74px -490px;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+}
+
+.icon-header-ic_header_admin {
+  @extend %iconBackground;
+  background-position: -290px -608px;
+  width: 27px;
+  height: 27px;
+  min-width: 27px;
+  min-height: 27px;
+}
+
+.icon-header-ic_header_logo {
+  @extend %iconBackground;
+  background-position: -204px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-ic_refresh_active {
+  @extend %iconBackground;
+  background-position: -180px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-header-notification-appcenter {
+  @extend %iconBackground;
+  background-position: -395px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-backingup {
+  @extend %iconBackground;
+  background-position: -456px -370px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-btn_close_normal {
+  @extend %iconBackground;
+  background-position: -709px -634px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.icon-header-notification-btn_close_over {
+  @extend %iconBackground;
+  background-position: -709px -578px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.icon-header-notification-btn_close_press {
+  @extend %iconBackground;
+  background-position: -709px -592px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.icon-header-notification-downloading {
+  @extend %iconBackground;
+  background-position: -563px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-ic_notification_content-removed {
+  @extend %iconBackground;
+  background-position: -148px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-ic_notification_export {
+  @extend %iconBackground;
+  background-position: -176px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-ic_notification_export_fail {
+  @extend %iconBackground;
+  background-position: -260px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-ic_notification_import {
+  @extend %iconBackground;
+  background-position: -400px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-ic_notification_import_fail {
+  @extend %iconBackground;
+  background-position: -428px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-ic_notification_share-to-me {
+  @extend %iconBackground;
+  background-position: -449px -240px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-ic_notification_stop-sharing {
+  @extend %iconBackground;
+  background-position: -232px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-header-notification-no_bg {
+  @extend %iconBackground;
+  background-position: -613px -214px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+}
+
+.icon-header-notification-no_ex {
+  @extend %iconBackground;
+  background-position: -613px -180px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+}
+
+.icon-header-notification-no_info {
+  @extend %iconBackground;
+  background-position: -647px -572px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+}
+
+.icon-header-notification-pause_normal {
+  @extend %iconBackground;
+  background-position: -709px -219px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-pause_over {
+  @extend %iconBackground;
+  background-position: -709px -203px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-pause_press {
+  @extend %iconBackground;
+  background-position: -709px -187px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-play_normal {
+  @extend %iconBackground;
+  background-position: -709px -411px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-play_over {
+  @extend %iconBackground;
+  background-position: -709px -395px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-play_press {
+  @extend %iconBackground;
+  background-position: -709px -299px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-scanning {
+  @extend %iconBackground;
+  background-position: -443px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-setting {
+  @extend %iconBackground;
+  background-position: -419px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-stop_normal {
+  @extend %iconBackground;
+  background-position: -709px -379px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-stop_over {
+  @extend %iconBackground;
+  background-position: -709px -363px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-stop_press {
+  @extend %iconBackground;
+  background-position: -709px -235px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-header-notification-testing {
+  @extend %iconBackground;
+  background-position: -539px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-transcode {
+  @extend %iconBackground;
+  background-position: -515px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-up_download {
+  @extend %iconBackground;
+  background-position: -467px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-header-notification-uploading {
+  @extend %iconBackground;
+  background-position: -491px -608px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.icon-input-btn_checkbox {
+  @extend %iconBackground;
+  background-position: -439px -270px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_checkbox_disable {
+  @extend %iconBackground;
+  background-position: -599px -490px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_checkbox_over {
+  @extend %iconBackground;
+  background-position: -628px -592px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_checkbox_pressed {
+  @extend %iconBackground;
+  background-position: -599px -468px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_checkbox_presseddisable {
+  @extend %iconBackground;
+  background-position: -599px -514px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_checkbox_pressedover {
+  @extend %iconBackground;
+  background-position: -616px -592px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_radio {
+  @extend %iconBackground;
+  background-position: -599px -502px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_radio_disable {
+  @extend %iconBackground;
+  background-position: -451px -270px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_radio_over {
+  @extend %iconBackground;
+  background-position: -463px -270px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_radio_pressed {
+  @extend %iconBackground;
+  background-position: -599px -526px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_radio_presseddisable {
+  @extend %iconBackground;
+  background-position: -599px -538px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_radio_pressedover {
+  @extend %iconBackground;
+  background-position: -427px -270px;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.icon-input-btn_text_close {
+  @extend %iconBackground;
+  background-position: -709px -564px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.icon-input-btn_text_close_over {
+  @extend %iconBackground;
+  background-position: -709px -620px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.icon-input-btn_text_close_pressed {
+  @extend %iconBackground;
+  background-position: -709px -606px;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.icon-menu-btn_category_mount_active {
+  @extend %iconBackground;
+  background-position: -288px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_mount_noraml {
+  @extend %iconBackground;
+  background-position: -316px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_notebook_active {
+  @extend %iconBackground;
+  background-position: -344px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_notebook_normal {
+  @extend %iconBackground;
+  background-position: -372px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_share_active {
+  @extend %iconBackground;
+  background-position: -613px -536px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_share_normal {
+  @extend %iconBackground;
+  background-position: -421px -240px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_tag_active {
+  @extend %iconBackground;
+  background-position: -616px -564px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-menu-btn_category_tag_normal {
+  @extend %iconBackground;
+  background-position: -120px -370px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+.icon-nasfile-line {
+  @extend %iconBackground;
+  background-position: -709px -162px;
+  width: 12px;
+  height: 25px;
+  min-width: 12px;
+  min-height: 25px;
+}
+
+.icon-nasfile-line_half {
+  @extend %iconBackground;
+  background-position: -709px -137px;
+  width: 12px;
+  height: 25px;
+  min-width: 12px;
+  min-height: 25px;
+}
+
+.icon-nasfile-line_o {
+  @extend %iconBackground;
+  background-position: -709px -112px;
+  width: 12px;
+  height: 25px;
+  min-width: 12px;
+  min-height: 25px;
+}
+
+.icon-nasfile-line_o_end {
+  @extend %iconBackground;
+  background-position: -709px -87px;
+  width: 12px;
+  height: 25px;
+  min-width: 12px;
+  min-height: 25px;
+}
+
+.icon-nasfile-line_o_open {
+  @extend %iconBackground;
+  background-position: -709px -62px;
+  width: 12px;
+  height: 25px;
+  min-width: 12px;
+  min-height: 25px;
+}
+
+.icon-nasfile-line_o_open_end {
+  @extend %iconBackground;
+  background-position: -709px -37px;
+  width: 12px;
+  height: 25px;
+  min-width: 12px;
+  min-height: 25px;
+}
+
+.icon-nasfile-menu_folder {
+  @extend %iconBackground;
+  background-position: -691px -362px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-nasfile-menu_folder_expand {
+  @extend %iconBackground;
+  background-position: -691px -344px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-nasfile-menu_nas {
+  @extend %iconBackground;
+  background-position: -691px -218px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-note-btn_empty-page_add_hover_pressed {
+  @extend %iconBackground;
+  background-position: 0px -282px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+}
+
+.icon-note-btn_empty-page_add_normal {
+  @extend %iconBackground;
+  background-position: -361px -120px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+}
+
+.icon-note-ic_note_read_only {
+  @extend %iconBackground;
+  background-position: -468px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-note-ic_note_share_from_me {
+  @extend %iconBackground;
+  background-position: -589px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-note-ic_note_share_with_me {
+  @extend %iconBackground;
+  background-position: -691px -380px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-note-img_empty-page {
+  @extend %iconBackground;
+  background-position: -361px 0px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+}
+
+.icon-note-img_trashcan {
+  @extend %iconBackground;
+  background-position: -352px -402px;
+  width: 74px;
+  height: 80px;
+  min-width: 74px;
+  min-height: 80px;
+}
+
+.icon-popup-Error_but_system_still_can_process {
+  @extend %iconBackground;
+  background-position: -613px -408px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-charging {
+  @extend %iconBackground;
+  background-position: -531px -352px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-delete {
+  @extend %iconBackground;
+  background-position: -613px -312px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-error {
+  @extend %iconBackground;
+  background-position: -613px -344px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-help {
+  @extend %iconBackground;
+  background-position: -613px -504px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-info {
+  @extend %iconBackground;
+  background-position: -613px -472px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-info_blue {
+  @extend %iconBackground;
+  background-position: -709px -283px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.icon-popup-ok {
+  @extend %iconBackground;
+  background-position: -613px -440px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-remind {
+  @extend %iconBackground;
+  background-position: -613px -248px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-popup-warning {
+  @extend %iconBackground;
+  background-position: -613px -376px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.icon-preview-btn_present_next_hover {
+  @extend %iconBackground;
+  background-position: -516px -490px;
+  width: 34px;
+  height: 60px;
+  min-width: 34px;
+  min-height: 60px;
+}
+
+.icon-preview-btn_present_next_normal {
+  @extend %iconBackground;
+  background-position: -613px 0px;
+  width: 34px;
+  height: 60px;
+  min-width: 34px;
+  min-height: 60px;
+}
+
+.icon-preview-btn_present_previous_hover {
+  @extend %iconBackground;
+  background-position: -613px -60px;
+  width: 34px;
+  height: 60px;
+  min-width: 34px;
+  min-height: 60px;
+}
+
+.icon-preview-btn_present_previous_normal {
+  @extend %iconBackground;
+  background-position: -613px -120px;
+  width: 34px;
+  height: 60px;
+  min-width: 34px;
+  min-height: 60px;
+}
+
+.icon-share-btn_edit_hover_ressed {
+  @extend %iconBackground;
+  background-position: -691px -308px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-share-btn_edit_normal {
+  @extend %iconBackground;
+  background-position: -691px -326px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-share-btn_list_sorting_decrease {
+  @extend %iconBackground;
+  background-position: -681px -582px;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.icon-share-btn_list_sorting_increase {
+  @extend %iconBackground;
+  background-position: -681px -572px;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.icon-share-ic_share_management_mount {
+  @extend %iconBackground;
+  background-position: -22px -652px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+.icon-sidebar-btn_add-note_hover {
+  @extend %iconBackground;
+  background-position: -131px -652px;
+  width: 21px;
+  height: 20px;
+  min-width: 21px;
+  min-height: 20px;
+}
+
+.icon-sidebar-btn_add-note_normal {
+  @extend %iconBackground;
+  background-position: -110px -652px;
+  width: 21px;
+  height: 20px;
+  min-width: 21px;
+  min-height: 20px;
+}
+
+.icon-sidebar-btn_menu_dropdown_hover {
+  @extend %iconBackground;
+  background-position: -709px -519px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-sidebar-btn_menu_dropdown_normal {
+  @extend %iconBackground;
+  background-position: -709px -474px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-sidebar-btn_menu_note_dropdown_hover {
+  @extend %iconBackground;
+  background-position: -361px -240px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.icon-sidebar-btn_menu_note_dropdown_normal {
+  @extend %iconBackground;
+  background-position: -391px -240px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.icon-sidebar-btn_menu_section_back_hover {
+  @extend %iconBackground;
+  background-position: -220px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-sidebar-btn_menu_section_back_normal {
+  @extend %iconBackground;
+  background-position: -240px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-sidebar-btn_menu_section_dropdown_hover {
+  @extend %iconBackground;
+  background-position: -599px -480px;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.icon-sidebar-btn_menu_section_dropdown_normal {
+  @extend %iconBackground;
+  background-position: -681px -592px;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.icon-sidebar-btn_menu_section_sorting_hover {
+  @extend %iconBackground;
+  background-position: -300px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-sidebar-btn_menu_section_sorting_normal {
+  @extend %iconBackground;
+  background-position: -320px -674px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icon-sidebar-btn_menu_sync_hover_pressed {
+  @extend %iconBackground;
+  background-position: -709px -549px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-sidebar-btn_menu_sync_normal {
+  @extend %iconBackground;
+  background-position: -709px -459px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-sidebar-btn_menu_tab_hover {
+  @extend %iconBackground;
+  background-position: -569px -420px;
+  width: 30px;
+  height: 70px;
+  min-width: 30px;
+  min-height: 70px;
+}
+
+.icon-sidebar-btn_menu_tab_normal {
+  @extend %iconBackground;
+  background-position: -569px -490px;
+  width: 30px;
+  height: 70px;
+  min-width: 30px;
+  min-height: 70px;
+}
+
+.icon-sidebar-btn_menu_unmount_hover_pressed {
+  @extend %iconBackground;
+  background-position: -709px -504px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-sidebar-btn_menu_unmount_normal {
+  @extend %iconBackground;
+  background-position: -709px -489px;
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.icon-sidebar-btn_tag_filter_hover {
+  @extend %iconBackground;
+  background-position: -709px -674px;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+}
+
+.icon-sidebar-btn_tag_filter_normal {
+  @extend %iconBackground;
+  background-position: -709px -648px;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+}
+
+.icon-sidebar-btn_tag_filter_pressed {
+  @extend %iconBackground;
+  background-position: -709px -661px;
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+}
+
+.icon-sidebar-ic_encrypt {
+  @extend %iconBackground;
+  background-position: -264px -608px;
+  width: 26px;
+  height: 30px;
+  min-width: 26px;
+  min-height: 30px;
+}
+
+.icon-sidebar-ic_menu_cloud_active {
+  @extend %iconBackground;
+  background-position: -691px -614px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_cloud_normal {
+  @extend %iconBackground;
+  background-position: -691px -632px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_defaultbook_active {
+  @extend %iconBackground;
+  background-position: -691px -650px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_defaultbook_normal {
+  @extend %iconBackground;
+  background-position: -531px -384px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_defaultsection_active {
+  @extend %iconBackground;
+  background-position: -549px -384px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_defaultsection_normal {
+  @extend %iconBackground;
+  background-position: -193px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_encrypt_hover {
+  @extend %iconBackground;
+  background-position: 0px -490px;
+  width: 74px;
+  height: 74px;
+  min-width: 74px;
+  min-height: 74px;
+}
+
+.icon-sidebar-ic_menu_encrypt_normal {
+  @extend %iconBackground;
+  background-position: -426px -402px;
+  width: 74px;
+  height: 74px;
+  min-width: 74px;
+  min-height: 74px;
+}
+
+.icon-sidebar-ic_menu_evernote_active {
+  @extend %iconBackground;
+  background-position: -247px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_evernote_normal {
+  @extend %iconBackground;
+  background-position: -265px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_favorites_active {
+  @extend %iconBackground;
+  background-position: -283px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_favorites_normal {
+  @extend %iconBackground;
+  background-position: -301px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_mountcloud_active {
+  @extend %iconBackground;
+  background-position: -319px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_mountcloud_normal {
+  @extend %iconBackground;
+  background-position: -337px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_mountnas_active {
+  @extend %iconBackground;
+  background-position: -355px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_mountnas_normal {
+  @extend %iconBackground;
+  background-position: -373px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_nas_active {
+  @extend %iconBackground;
+  background-position: -391px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_nas_activel {
+  @extend %iconBackground;
+  background-position: -409px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_nas_normal {
+  @extend %iconBackground;
+  background-position: -427px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_notebook_active {
+  @extend %iconBackground;
+  background-position: -445px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_notebook_normal {
+  @extend %iconBackground;
+  background-position: -463px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_onenote_active {
+  @extend %iconBackground;
+  background-position: -481px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_onenote_normal {
+  @extend %iconBackground;
+  background-position: -499px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_recyclebin_active {
+  @extend %iconBackground;
+  background-position: -517px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_recyclebin_normal {
+  @extend %iconBackground;
+  background-position: -535px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_section_active {
+  @extend %iconBackground;
+  background-position: -553px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_section_normal {
+  @extend %iconBackground;
+  background-position: -571px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_share_from_me_active {
+  @extend %iconBackground;
+  background-position: -691px -182px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_share_from_me_normal {
+  @extend %iconBackground;
+  background-position: -607px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_share_with_me_active {
+  @extend %iconBackground;
+  background-position: -625px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_share_with_me_normal {
+  @extend %iconBackground;
+  background-position: -643px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_sync_active {
+  @extend %iconBackground;
+  background-position: -661px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_sync_normal {
+  @extend %iconBackground;
+  background-position: -360px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_sync_share_active {
+  @extend %iconBackground;
+  background-position: -378px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_sync_share_normal {
+  @extend %iconBackground;
+  background-position: -396px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_tag_active {
+  @extend %iconBackground;
+  background-position: -414px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_menu_tag_normal {
+  @extend %iconBackground;
+  background-position: -432px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-ic_note_title {
+  @extend %iconBackground;
+  background-position: -709px -18px;
+  width: 17px;
+  height: 19px;
+  min-width: 17px;
+  min-height: 19px;
+}
+
+.icon-sidebar-ic_note_title_encrypt {
+  @extend %iconBackground;
+  background-position: -152px -652px;
+  width: 22px;
+  height: 19px;
+  min-width: 22px;
+  min-height: 19px;
+}
+
+.icon-sidebar-line {
+  @extend %iconBackground;
+  background-position: -691px -104px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_beginning_close_active {
+  @extend %iconBackground;
+  background-position: -504px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-line_beginning_close_normal {
+  @extend %iconBackground;
+  background-position: -522px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-line_beginning_open_active {
+  @extend %iconBackground;
+  background-position: -540px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-line_beginning_open_normal {
+  @extend %iconBackground;
+  background-position: -558px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-sidebar-line_end_close_active {
+  @extend %iconBackground;
+  background-position: -691px -130px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_end_close_normal {
+  @extend %iconBackground;
+  background-position: -691px -78px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_end_open_active {
+  @extend %iconBackground;
+  background-position: -550px -516px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_end_open_normal {
+  @extend %iconBackground;
+  background-position: -550px -490px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_middle_close {
+  @extend %iconBackground;
+  background-position: -691px -156px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_middle_close_active {
+  @extend %iconBackground;
+  background-position: -691px -26px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_middle_open_active {
+  @extend %iconBackground;
+  background-position: -691px 0px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-sidebar-line_middle_open_normal {
+  @extend %iconBackground;
+  background-position: -691px -52px;
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+}
+
+.icon-toolbar-btn_function_encrypt_hover {
+  @extend %iconBackground;
+  background-position: -691px -398px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_encrypt_normal {
+  @extend %iconBackground;
+  background-position: -691px -416px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_favorite_hover {
+  @extend %iconBackground;
+  background-position: -691px -434px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_favorite_normal {
+  @extend %iconBackground;
+  background-position: -691px -452px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_info_hover {
+  @extend %iconBackground;
+  background-position: -691px -470px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_info_normal {
+  @extend %iconBackground;
+  background-position: -691px -488px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_more_hover {
+  @extend %iconBackground;
+  background-position: -691px -506px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_more_normal {
+  @extend %iconBackground;
+  background-position: -691px -524px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_print_hover {
+  @extend %iconBackground;
+  background-position: -691px -542px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_print_normal {
+  @extend %iconBackground;
+  background-position: -691px -560px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_recyclebin_active {
+  @extend %iconBackground;
+  background-position: -691px -578px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_recyclebin_normal {
+  @extend %iconBackground;
+  background-position: -691px -596px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_report_hover {
+  @extend %iconBackground;
+  background-position: -229px -652px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_report_normal {
+  @extend %iconBackground;
+  background-position: -450px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_share_hover {
+  @extend %iconBackground;
+  background-position: -709px 0px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_share_normal {
+  @extend %iconBackground;
+  background-position: -486px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_snapshot_hover {
+  @extend %iconBackground;
+  background-position: -576px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_snapshot_management_hover {
+  @extend %iconBackground;
+  background-position: -594px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_snapshot_management_normal {
+  @extend %iconBackground;
+  background-position: -612px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_snapshot_normal {
+  @extend %iconBackground;
+  background-position: -630px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_tag_hover {
+  @extend %iconBackground;
+  background-position: -648px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_tag_normal {
+  @extend %iconBackground;
+  background-position: -666px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_top_hover {
+  @extend %iconBackground;
+  background-position: -684px -674px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-toolbar-btn_function_top_normal {
+  @extend %iconBackground;
+  background-position: -691px -200px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.icon-tutorial-img_tutorial {
+  @extend %iconBackground;
+  background-position: 0px 0px;
+  width: 361px;
+  height: 282px;
+  min-width: 361px;
+  min-height: 282px;
+}

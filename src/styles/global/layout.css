@@ -1,0 +1,115 @@
+%qnote-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-vertical {
+        display: flex;
+        align-items: center;
+    }
+    &-horizontal {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+%qnote-no-wrap {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+%qnote-link {
+    color: #0071ba !important;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        color: #015def !important;
+    }
+    &:active {
+        color: #7eaefe !important;
+    }
+    &-green {
+        color: #4F997D !important;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover, &:active {
+            color: #52b791 !important;
+        }
+    }
+    &-red {
+        color: #C1272D !important;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover, &:active {
+            color: #de3c43 !important;
+        }
+    }
+}
+
+%qnote-animate {
+    transition: all, 500ms, cubic-bezier(0.2, 0.3, 0.25, 0.9);
+}
+
+%layout {
+    display: flex;
+    align-items: center;
+}
+
+%layout-flex-1 {
+    flex: 1;
+}
+
+%layout-flex- {
+    &left {
+        @extend %layout;
+        justify-content: flex-start;
+    }
+    &right {
+        @extend %layout;
+        justify-content: flex-end;
+    }
+    &center {
+        @extend %layout;
+        justify-content: center;
+    }
+    &vertical {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.form {
+    @extend %layout-flex-left;
+    &-column {
+        @extend %layout-flex-vertical;
+        &.left {
+            flex: 0 1 auto;
+            max-width: 30%;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            word-break: break-word;
+            padding-right: 10px;
+        }
+        &.right {
+            flex: 1 1 70%;
+        }
+    }
+    &-cell {
+        &.left {
+            flex: 1 1 auto;
+            align-self: flex-end;
+            padding-bottom: 24px;
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+        &.right {
+            padding: 0 0 14px 0;
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

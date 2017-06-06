@@ -1,0 +1,42 @@
+.ProseMirror-menuitem {
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 3px;
+  /*&-linktext {
+    max-width: 280px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #0071ba;
+    a {
+      color: #0071ba;
+      &:hover {
+        color: #015def;
+        text-decoration: underline;
+      }
+      &:active {
+        color: #7eaefe;
+      }
+      &:visited {
+        color: #753f94;
+      }
+    }
+  }
+  &-table-modifier {
+    width: 21px;
+    height: 16px;
+    padding: 0 2px;
+    color: #000000;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 16px;
+    cursor: pointer;
+    div {
+      margin: 0 auto;
+    }
+  }*/
+}

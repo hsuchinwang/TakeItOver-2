@@ -1,0 +1,43 @@
+- hosts: EC2
+  remote_user: ubuntu
+  become: true
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: install node 8.0.0 step1
+      raw: sudo apt-get update
+    - name: install node 8.0.0 step2
+      raw: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    - name: install node 8.0.0 step3
+      raw: sudo apt-get install -y nodejs
+    - name: install mongo step1
+      raw: sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+    - name: install mongo step2
+      raw: echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+    - name: install mongo step3
+      raw: sudo apt-get update
+    - name: install mongo step4
+      raw: sudo apt-get install -y mongodb-org
+    - name: install mongo step5
+      raw: export LC_ALL=C
+   # - name: install Docker from official shell script
+  #    raw: curl -sSL https://get.docker.com/ | sh
+   #- name: test1
+   #  raw: sudo dpkg --configure -a
+   #  raw: curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+   #- name: test5
+   #  apt: name=nodejs state=installed force=yes
+  # - name: install | GIT | DOCKER
+  #   apt: name={{item}} state=installed force=yes
+  #   with_items:
+      #- git
+   #- name: install | GIT
+   #  apt: name=git state=installed
+   #- name: "Install npm forever package"
+   #  npm: name=forever global=yes state=present
+   #- name: GIT | Cloning 
+   #  git: repo=git://github.com/CSC-DevOps/App.git dest=/srv/DevOps clone=yes update=yes
+   #- name: "install NPM packages"
+   #  npm: path=/srv/DevOps state=latest
+   #- name: "Run app: forever start main.js"
+   #  command: forever start /srv/DevOps/main.js

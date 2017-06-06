@@ -1,0 +1,12 @@
+.qnote-menu {
+    flex: 0 0 48px;
+    width: 48px;
+    cursor: pointer;
+    @extend %qnote-center;
+    &:active {
+		background-color: #1d1d1d;
+    }
+    &-selected {
+    	background-color: #1d1d1d;	
+    }
+}

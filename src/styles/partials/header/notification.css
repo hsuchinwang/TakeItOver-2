@@ -1,0 +1,120 @@
+
+.notification {
+    z-index: 4;
+    width: 306px;
+    max-width: 306px;
+    position: absolute;
+    border: 1px solid #b0b0b0;
+    background: rgba(255, 255, 255, 0.95);
+    outline: none;
+    background-color: #FFFFFF;
+    padding-bottom: 18px;
+    overflow: hidden;
+    &-header {
+        height: 38px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #b0b0b0;
+        position: relative;
+        span {
+            @extend %font-size-14;
+            color: #2f2f2f;
+            font-weight: bold;
+            position: absolute;
+            bottom: 7px;
+            left: 28px;
+        }
+    }
+    &-items {
+        width: 306px;
+        max-height: 320px;
+        overflow: auto;
+        padding: 0px;
+    }
+    &-empty-item {
+        padding: 16px 0 6px 0;
+        text-align: center;
+        .empty-icon {
+            width: 14px;
+            height: 14px;
+            margin: 0 auto;
+        }
+        div {
+            @extend %font-size-12;
+            color: #7f7f7f;
+        }
+    }
+    &-item {
+        padding-top: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        border-bottom: 1px solid #dddddd;
+        &:hover {
+            background-color: #DEFEFE;
+            cursor: pointer;
+        }
+        &:last-child {
+            border-bottom: 0px;
+        }
+        &-container{
+            display: flex;
+            align-items: flex-end;
+            width: 228px;
+            padding-bottom: 6px;
+        }
+        &-content {
+            flex: 1;
+            display: flex;
+            padding-bottom: 6px;
+            overflow: hidden;
+            margin-right: 28px;
+            align-items: center;
+            .task-icon {
+                margin: 0 20px 0 28px;
+                width: 14px;
+                height: 14px;
+            }
+            .description-container {
+                flex: 1;
+                width: 187px;
+                .title {
+                    @extend %font-size-13;
+                    color: #2f2f2f;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .subinfo {
+                    width: 100%;
+                    @extend %font-size-12;
+                    font-weight: 600;
+                    color: #334b84;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        &-btn-container {
+            padding: 0 28px 0 24px;
+        }
+        &-btn {
+            width: 14px;
+            height: 14px;
+            margin-right: 0;
+            &:hover {
+                cursor: pointer;
+            };
+        }
+    }
+    &-btn-container {
+        margin-top: 10px;
+        padding-right: 28px;
+        text-align: right;
+        button {
+            min-width: 80px;
+        }
+    }
+}
