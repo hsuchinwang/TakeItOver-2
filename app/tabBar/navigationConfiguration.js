@@ -1,13 +1,15 @@
 'use strict'
 import { Platform } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 // Tab-Navigators
 import TabOneNavigation from '../tabOne/views/TabOneNavigation';
 import TabTwoNavigation from '../tabTwo/views/TabTwoNavigation';
 import TabThreeNavigation from '../tabThree/views/TabThreeNavigation';
 import TabFourNavigation from '../tabFour/views/TabFourNavigation';
+import LoginScreen from './views/LoginScreen';
+import SplashScreen from './views/SplashScreen';
 
-const routeConfiguration = {
+const TabrouteConfiguration = {
   TabOneNavigation: { screen: TabOneNavigation },
   TabTwoNavigation: { screen: TabTwoNavigation },
   TabThreeNavigation: { screen: TabThreeNavigation },
@@ -32,6 +34,19 @@ const tabBarConfiguration = {
     }
   }
 }
+const Home = TabNavigator(TabrouteConfiguration, tabBarConfiguration)
 
-export const TabBar = TabNavigator(routeConfiguration, tabBarConfiguration)
+const StackrouteConfiguration = {
+  Splash: { screen: SplashScreen },
+  Home: { screen: Home },
+  Login: { screen: LoginScreen },
+}
+const StackConfiguration = {
+  initialRouteName:'Splash',
+  headerMode: 'none',
+  navigationOptions:{
+    gesturesEnabled: false,
+  },
+}
+export const TabBar = StackNavigator(StackrouteConfiguration, StackConfiguration);
 

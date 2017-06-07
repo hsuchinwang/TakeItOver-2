@@ -1,2 +1,2 @@
-export const BASECONNECTION = 'http://172.17.28.44';
+export const SERVER_IP = 'localhost';
 export const PORT = '8083';

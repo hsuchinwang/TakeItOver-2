@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
 export default class TabThreeScreenTwo extends React.Component {
   static navigationOptions = ({ navigation }) => {
     

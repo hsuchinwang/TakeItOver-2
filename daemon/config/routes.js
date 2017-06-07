@@ -25,9 +25,10 @@ module.exports = (app) => {
     })
   })
   app.get('/check_login', (req, res) => {
-    console.log(req.session.username)
     if (req.session.username) {
-        res.send({loggedIn: true})
+        User.find({name: req.session.username}, (e, user) => {
+          res.send({loggedIn: true, user})
+        })
     } else {
         res.send({loggedIn: false})
     }
@@ -44,22 +45,35 @@ module.exports = (app) => {
     }
   })
   app.post('/login', (req, res) => {
-    if (req.body.username === 'A' && req.body.password === 'A') {
-      req.session.username = req.body.username
-      res.send({loggedIn: true})
-      res.end()
-    } else {
-      res.send({loggedIn: false})
-      res.end()
-    }
+    User.find({
+      name: req.body.username,
+      password: req.body.password
+    },
+      (e, user) => {
+      if (e) {
+        res.send({loggedIn: false})
+        res.end()
+      } else {
+        req.session.username = req.body.username
+        res.send({loggedIn: true, user})
+        res.end()
+      }
+    })
+    // if (req.body.username === 'A' && req.body.password === 'A') {
+    //   req.session.username = req.body.username
+    //   res.send({loggedIn: true})
+    //   res.end()
+    // } else {
+    //   res.send({loggedIn: false})
+    //   res.end()
+    // }
   })
-  app.get('/logout', function(req, res) {
+  app.get('/logout', (req, res) => {
     // clear the remember me cookie when logging out
     req.session.destroy()
-    res.send({loggedIn: false})
     res.end()
   })
-  app.get('/manager_logout', function(req, res) {
+  app.get('/manager_logout', (req, res) => {
     req.session.destroy()
     res.end()
   })

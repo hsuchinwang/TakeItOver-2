@@ -1,6 +1,18 @@
 'use strict'
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, RefreshControl, ScrollView, Platform } from 'react-native';
+import { 
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  RefreshControl,
+  ScrollView,
+  Platform,
+  TextInput,
+  Button,
+  AsyncStorage,
+} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
@@ -29,7 +41,14 @@ export default class TabOneScreenOne extends React.Component {
         marginLeft: -20,
       },
       headerLeft: (
-        <Ionicons.Button name="ios-menu" color="#185ffe" style={{marginLeft:13}}backgroundColor="#eeeef2" onPress={() => navigation.navigate('DrawerOpen')}>
+        <Ionicons.Button 
+          name="ios-menu"
+          color="#185ffe"
+          style={{marginLeft:13}} 
+          backgroundColor="#eeeef2"
+          onPress={
+            () => navigation.navigate('DrawerOpen')
+          }>
         </Ionicons.Button>
       ),
       drawerLabel: '首頁',
@@ -100,7 +119,19 @@ export default class TabOneScreenOne extends React.Component {
         >
           <Text style={styles.text}>{this.state.board}</Text>
           <TouchableOpacity
-            onPress={ () => this.props.navigation.navigate('TabOneDrawerTwo') }
+            onPress={ async () => {
+              //this.props.navigation.navigate('TabOneDrawerTwo')
+              try {
+                const value = await AsyncStorage.getItem('@User');
+                if (value !== null){
+                  // We have data!!
+                  console.log(value);
+                }
+              } catch (error) {
+                console.log(error);
+              }
+              //console.log(this.props.navigation.state.params.data);
+            }}
             style={{
               padding:20,
               borderRadius:20,

@@ -1,17 +1,20 @@
 'use strict'
 
 import React from 'react';
-import { View, Text, Image, StyleSheet, Platform } from 'react-native';
-import { StackNavigator, DrawerNavigator, DrawerItems } from 'react-navigation';
+import { View, Text, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { StackNavigator, DrawerNavigator, DrawerItems, NavigationActions } from 'react-navigation';
 // Screens
 import TabOneScreenOne from './views/TabOneScreenOne';
 import TabOneScreenTwo from './views/TabOneScreenTwo';
 import TabOneScreenThree from './views/TabOneScreenThree';
 import TabOneScreenFour from './views/TabOneScreenFour';
-//import BackgroundImage from '../components/BackgroundImage';
+import TabOneScreenFive from './views/TabOneScreenFive';
+import TabOneScreenSix from './views/TabOneScreenSix';
+import * as Config from '../constants/config';
 
 const SideDrawer = (props) => {
   return (
+    <ScrollView>
     <View style={styles.DrawerContainer}>
       <View style={styles.drawerIconContainer}>
         <Image  
@@ -20,8 +23,19 @@ const SideDrawer = (props) => {
         />
       </View>
       <View style={{height:1, width:'100%', backgroundColor:'black'}}></View>
-      <DrawerItems {...props} />
+      <DrawerItems {...props} 
+        onItemPress={(route) => {
+          if (route.route.routeName === 'TabOneDrawerSix') {
+            fetch(`http://${Config.SERVER_IP}:${Config.PORT}/logout`);
+            props.navigation.navigate('DrawerClose');
+            props.navigation.navigate('Login');
+          } else {
+            props.navigation.navigate('DrawerClose');
+            props.navigation.navigate(route.route.routeName);
+          }
+        }}/>
     </View>
+    </ScrollView>
   )
 };
 
@@ -38,7 +52,6 @@ const styles = StyleSheet.create({
     drawerIconContainer:{
       height: 200,
       width: '100%',
-      resizeMode: 'cover',
       alignItems:'center',
       justifyContent:'center',
     },
@@ -74,12 +87,24 @@ const tabOneDrawerFour = StackNavigator({
   },
   stackNavigatorConfiguration
 );
+const tabOneDrawerFive = StackNavigator({
+  TabOneScreenFour: { screen: TabOneScreenFive },
+  },
+  stackNavigatorConfiguration
+);
+const tabOneDrawerSix = StackNavigator({
+  TabOneDrawerSix: { screen: TabOneScreenSix },
+  },
+  stackNavigatorConfiguration
+);
 
 const routeConfiguration = {
   TabOneDrawerOne: { screen: tabOneDrawerOne },
   TabOneDrawerTwo: { screen: tabOneDrawerTwo },
   TabOneDrawerThree: { screen: tabOneDrawerThree },
   TabOneDrawerFour: { screen: tabOneDrawerFour },
+  TabOneDrawerFive: { screen: tabOneDrawerFive },
+  TabOneDrawerSix: { screen: tabOneDrawerSix },
 }
 // going to disable the header for now
 const DrawerNavigatorConfiguration = {

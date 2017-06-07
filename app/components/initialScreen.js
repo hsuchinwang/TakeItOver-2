@@ -6,8 +6,8 @@ import {
   View
 } from 'react-native';
 import imageFlags from '../constants/imageFlags';
-export default class BackgroundImage extends Component {
-    
+
+export default class initialScreen extends Component {
     render() {
         return (
             <Image 
