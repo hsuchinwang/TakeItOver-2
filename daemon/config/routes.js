@@ -51,12 +51,18 @@ module.exports = (app) => {
     },
       (e, user) => {
       if (e) {
+        console.log(e)
         res.send({loggedIn: false})
         res.end()
       } else {
-        req.session.username = req.body.username
-        res.send({loggedIn: true, user})
-        res.end()
+        if (user.length === 0) {
+          res.send({loggedIn: false})
+          res.end()
+        } else {
+          req.session.username = req.body.username
+          res.send({loggedIn: true, user})
+          res.end()
+        }
       }
     })
     // if (req.body.username === 'A' && req.body.password === 'A') {
