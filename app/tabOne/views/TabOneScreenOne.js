@@ -14,6 +14,7 @@ import {
   AsyncStorage,
   Dimensions,
 } from 'react-native';
+import * as Config from '../../constants/config';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
@@ -130,6 +131,9 @@ export default class TabOneScreenOne extends React.Component {
               <Text style={styles.text}>{this.state.board}</Text>
           <TouchableOpacity
             onPress={ async () => {
+              const value1 = await AsyncStorage.getItem('@User1');
+              console.log(value1);
+              fetch(`http://${Config.SERVER_IP}:${Config.PORT}/check_login`)
               //this.props.navigation.navigate('TabOneDrawerTwo')
               try {
                 const value = await AsyncStorage.getItem('@User');

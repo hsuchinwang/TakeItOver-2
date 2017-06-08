@@ -72,7 +72,7 @@
         </div>
     </div>
     <script>
-    var BASECONNECTION = 'http://172.17.28.44';
+    var BASECONNECTION = 'http://54.250.166.40';
     var PORT = '8083';
     // window.onload = function() {
     //     var scope = angular.element(document.getElementById("MainWrap")).scope();
@@ -94,7 +94,7 @@
                                 mode: 'cors',
                                 credentials: 'include',
                                 cache: 'default' };
-                    fetch(BASECONNECTION + ':' + PORT + '/manager_login',myInit).then(response => {
+                    fetch(BASECONNECTION + ':' + PORT + '/manager_login', myInit).then(response => {
                         console.log(response);
                     })
                     // $http({

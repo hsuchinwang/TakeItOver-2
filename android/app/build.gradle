@@ -81,12 +81,11 @@ def enableSeparateBuildPerCPUArchitecture = false
 /**
  * Run Proguard to shrink the Java bytecode in release builds.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
     defaultConfig {
         applicationId "com.banner.takeitover"
         minSdkVersion 16

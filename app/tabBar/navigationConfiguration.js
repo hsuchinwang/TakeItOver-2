@@ -42,7 +42,7 @@ const StackrouteConfiguration = {
   Login: { screen: LoginScreen },
 }
 const StackConfiguration = {
-  initialRouteName:'Home',
+  initialRouteName:'Splash',
   headerMode: 'none',
   navigationOptions:{
     gesturesEnabled: false,

@@ -39,7 +39,8 @@ async function login(value) {
     });
     if (response.loggedIn) {
       try {
-        await AsyncStorage.setItem('@User', JSON.stringify(response.user));
+        await AsyncStorage.setItem('@isLogined', 'Y');
+        await AsyncStorage.setItem('@UserData', JSON.stringify(response.user));
       } catch (error) {
         console.log(error);
         // Error saving data
