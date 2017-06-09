@@ -1,0 +1,2 @@
+var BASECONNECTION = 'http://54.199.248.41';
+var PORT = '8083';

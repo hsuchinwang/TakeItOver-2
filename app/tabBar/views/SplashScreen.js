@@ -56,12 +56,12 @@ export default class SplashScreen extends React.Component {
   }
 
   componentDidMount() {
+    check_login.bind(this)();
     setTimeout(()=>{
       this.setState({
         isVisible: false
       });
-      check_login.bind(this)();
-    }, 3000);
+    }, 1500);
   }
   render() {
     return(

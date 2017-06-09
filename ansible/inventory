@@ -9,7 +9,7 @@
 #172.17.41.53 ansible_user=ubuntu ansible_ssh_pass=password
 
 [EC2]
-54.250.166.40 ansible_user=ubuntu ansible_ssh_private_key_file=takeitover.pem
+54.199.248.41 ansible_user=ubuntu ansible_ssh_private_key_file=youngditakeitover.pem
 
 #[Platform9test04]
 #172.17.41.45 ansible_user=ubuntu ansible_ssh_pass=password

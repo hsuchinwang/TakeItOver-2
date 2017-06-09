@@ -4,7 +4,23 @@ const Country = require('../models/country')
 const Setting = require('../models/setting')
 const Question = require('../models/question')
 const Feedback = require('../models/feedback')
-// var superagent = require('superagent')
+const superagent = require('superagent')
+const axios = require('axios')
+var OpenCC = require('opencc')
+var openst = new OpenCC('s2t.json')
+var opents = new OpenCC('t2s.json')
+
+
+  // COPY Release/s2t.json
+  // COPY Release/t2s.json
+  // COPY Release/s2tw.json
+  // COPY Release/s2twp.json
+  // COPY Release/tw2s.json
+  // COPY Release/tw2sp.json
+  // COPY Release/t2tw.json
+  // COPY Release/s2hk.json
+  // COPY Release/hk2s.json
+  // COPY Release/t2hk.json
 module.exports = (app) => {
   app.use((req, res, next) => {
      next()
@@ -509,20 +525,21 @@ module.exports = (app) => {
     })
   })
   // 机器人消息
-  // app.get('/robotapi', (req, res) => {
-  //   var response = res
-  //   var info = req.query.info
-  //   var userid = req.query.id
-  //   var key = 'fde7f8d0b3c9471cbf787ea0fb0ca043'
-  //   superagent.post('http://www.tuling123.com/openapi/api')
-  //     .send({info, userid, key})
-  //     .end((err, res) => {
-  //       if (err) {
-  //         console.log(err)
-  //       }
-  //       response.json({
-  //         data: res.text
-  //       })
-  //     })
-  // })
+  app.post('/robotapi', (req, res) => {
+     var response = res
+     var info = opents.convertSync(req.body.info)
+     var userid = req.body.id
+     var key = 'fde7f8d0b3c9471cbf787ea0fb0ca043'
+    superagent.post('http://www.tuling123.com/openapi/api')
+      .send({info, userid, key})
+      .end((err, res) => {
+        if (err) {
+          console.log(err)
+        }
+        response.send({
+          data: openst.convertSync(JSON.parse(res.text).text)
+        })
+        response.end()
+    })
+  })
 }

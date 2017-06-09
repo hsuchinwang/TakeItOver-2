@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -27,8 +28,12 @@ const renderPassWordInput = ({ input: { onChange, ...restInput }}) => {
   return <TextInput placeholderTextColor="#FFF" placeholder="Password" style={styles.input} secureTextEntry onChangeText={onChange} {...restInput} />
 }
 
-const LoginForm = props => {
-  const { handleSubmit } = props
+class LoginForm extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  // const { handleSubmit } = this.props
+  render() {
   return (
       <View style={styles.container}>
         <Image source={background} style={styles.background} resizeMode="cover">
@@ -53,7 +58,8 @@ const LoginForm = props => {
                 <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={.5} onPress={handleSubmit(props.Submit)}>
+            {(this.props.wrong) && (<TouchableOpacity activeOpacity={.5}><View><Text style={styles.wrongPasswordText}>帳號或密碼錯誤</Text></View></TouchableOpacity>)}
+            <TouchableOpacity activeOpacity={.5} onPress={this.props.handleSubmit(this.props.Submit)}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>登入</Text>
               </View>
@@ -65,7 +71,8 @@ const LoginForm = props => {
           </View>
         </Image>
       </View>
-  )
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -125,6 +132,13 @@ const styles = StyleSheet.create({
     textAlign: "right",
     paddingRight: 15,
   },
+  wrongPasswordText: {
+    color: "#D20000",
+    backgroundColor: "transparent",
+    textAlign: "right",
+    paddingRight: 15,
+    marginTop:5,
+  },
   signupWrap: {
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -144,55 +158,3 @@ const styles = StyleSheet.create({
 export default reduxForm({
   form: 'Login' // a unique name for this form
 })(LoginForm);
-
-
-
-
-
-/*class LoginScreen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image source={background} style={styles.background} resizeMode="cover">
-          <View style={styles.markWrap}>
-            <Image source={mark} style={styles.mark} resizeMode="contain" />
-          </View>
-          <View style={styles.wrapper}>
-            <View style={styles.inputWrap}>
-              <View style={styles.iconWrap}>
-                <Image source={personIcon} style={styles.icon} resizeMode="contain" />
-              </View>
-              <Field name="username" component={renderNameInput} />
-            </View>
-            <View style={styles.inputWrap}>
-              <View style={styles.iconWrap}>
-                <Image source={lockIcon} style={styles.icon} resizeMode="contain" />
-              </View>
-              <Field name="password" component={renderPassWordInput} />
-            </View>
-            <TouchableOpacity activeOpacity={.5}>
-              <View>
-                <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity activeOpacity={.5} onPress={handleSubmit(props.Submit)}>
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>Sign In</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.container}>
-            <View style={styles.signupWrap}>
-              <Text style={styles.accountText}>Don't have an account?</Text>
-              <TouchableOpacity activeOpacity={.5}>
-                <View>
-                  <Text style={styles.signupLinkText}>Sign Up</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </Image>
-      </View>
-    );
-  }
-}*/
