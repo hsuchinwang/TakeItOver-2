@@ -18,7 +18,7 @@ class App extends React.Component {
   }
   constructor(props) {
     super(props);
-    this.socket = io(`${Config.BASECONNECTION}:${Config.PORT}`, { transports: ['websocket'] });
+    this.socket = io(`${Config.SERVER_IP}:${Config.PORT}`, { transports: ['websocket'] });
   }
   getChildContext() {
     return {
@@ -26,7 +26,7 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-      CodePush.sync({ updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
+      CodePush.sync({ updateDialog: false, installMode: CodePush.InstallMode.IMMEDIATE },
         (status) => {
           switch (status) {
             case CodePush.SyncStatus.DOWNLOADING_PACKAGE:

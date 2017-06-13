@@ -17,8 +17,10 @@ const TabrouteConfiguration = {
 }
 
 const tabBarConfiguration = {
+  ...TabNavigator.Presets.AndroidTopTabs,
   swipeEnabled: false,
   lazyLoad: true,
+  tabBarPosition: 'bottom',
   tabBarOptions: {
     activeTintColor: Platform.OS === 'ios' ? '#fff' : '#fff',
     labelStyle: {
@@ -26,11 +28,18 @@ const tabBarConfiguration = {
         color: '#eff0f4',
     },
     showIcon: true,
+    showLabel: false,
     style: {
-      backgroundColor: '#339e85',
+      backgroundColor: '#2c2f30',
+      borderTopWidth: 3,
+      borderTopColor: 'rgba(83,83,83,0.1)',
+    },
+    tabStyle: {
+      borderRightWidth: 1,
+      borderRightColor: 'white',
     },
     indicatorStyle: {
-      backgroundColor: '#fff',
+      backgroundColor: '#2c2f30',
     }
   }
 }
