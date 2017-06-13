@@ -2,6 +2,7 @@
 // React
 import React from 'react';
 import { AppRegistry, Platform, StyleSheet, View, TextInput, Button, TouchableOpacity, Text, Animated } from 'react-native';
+import CodePush from "react-native-code-push";
 // Redux
 import { Provider } from 'react-redux';
 import configureStore from './app/store/configureStore';
@@ -9,6 +10,7 @@ import configureStore from './app/store/configureStore';
 import TabBarNavigation from './app/tabBar/views/TabBarNavigation';
 import io from 'socket.io-client';
 import * as Config from './app/constants/config';
+
 
 class App extends React.Component {
   static childContextTypes = {
@@ -22,6 +24,26 @@ class App extends React.Component {
     return {
       socket: this.socket,
     }
+  }
+  componentDidMount() {
+      CodePush.sync({ updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
+        (status) => {
+          switch (status) {
+            case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
+              this.setState({showDownloadingModal: true});
+              break;
+            case CodePush.SyncStatus.INSTALLING_UPDATE:
+              this.setState({showInstalling: true});
+              break;
+            case CodePush.SyncStatus.UPDATE_INSTALLED:
+              this.setState({showDownloadingModal: false});
+              break;
+          }
+        },
+        ({ receivedBytes, totalBytes, }) => {
+            this.setState({downloadProgress: receivedBytes / totalBytes * 100});
+        }
+      );
   }
   render() {
     return(
