@@ -20,20 +20,104 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
 
 const { width, height } = Dimensions.get("window");
-
+async function getFlagFromSetting() {
+    let response = await fetch(`http://${Config.SERVER_IP}:${Config.PORT}/get_setting`)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response[0];
+}
+async function getMyUser() {
+  const username = await AsyncStorage.getItem('@UserName');
+    let response = await fetch(
+      `http://${Config.SERVER_IP}:${Config.PORT}/get_my_user`,
+      {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify({
+          'name': username,
+        })
+     }
+    )
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response[0];
+}
+async function getMyCountry() {
+  const userCountry = await AsyncStorage.getItem('@UserCountry');
+    let response = await fetch(
+      `http://${Config.SERVER_IP}:${Config.PORT}/get_my_country`,
+      {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify({
+          'country': userCountry,
+        })
+     }
+    )
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response[0];
+}
 export default class TabOneScreenOne extends React.Component {
   constructor(props) {
     super(props);
+    this.init();
     this.state = {
       isRefreshing: false,
-      board: '歡迎進入奇妙的世界！'
+      board: '',
+      country: '',
+      K: 0,
+      water: 0,
+      fire: 0,
+      wood: 0,
+      stone: 0,
+      seed: 0,
     };
+  }
+  async init() {
+    const table_flag = await getFlagFromSetting();
+    if (table_flag.changeToDay3 == 'T') {
+      const country = await getMyCountry();
+      this.setState({
+        K: country.K,
+        water: country.water,
+        fire: country.fire,
+        wood: country.wood,
+        stone: country.stone,
+        seed: country.seed,
+        isRefreshing: false
+      });
+    } else {
+      const user = await getMyUser();
+      this.setState({
+        K: user.K,
+        water: user.water,
+        fire: user.fire,
+        wood: user.wood,
+        stone: user.stone,
+        seed: user.seed,
+        isRefreshing: false
+      });
+    }
   }
   _onRefresh() {
     this.setState({isRefreshing: true});
-    setTimeout(() => {
-      this.setState({isRefreshing: false});
-    },500);
+    this.init();
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -67,9 +151,9 @@ export default class TabOneScreenOne extends React.Component {
   };
   componentDidMount() {
     FCM.on(FCMEvent.Notification, async (notif) => {
-      console.log(notif);
+      // console.log(notif);
       //Platform.OS()
-      alert('I recevied a message:');
+      // alert('I recevied a message:');
       // this.setState({
       //   board: notif.notification.body,
       // });
@@ -99,6 +183,7 @@ export default class TabOneScreenOne extends React.Component {
     });
   }
   render() {
+    console.log(this.state);
     return(
       <View
         style={{
@@ -163,7 +248,6 @@ export default class TabOneScreenOne extends React.Component {
     )
   }
 }
-console.log(height);
 const styles = StyleSheet.create({
   text: {
     textAlign: 'center',

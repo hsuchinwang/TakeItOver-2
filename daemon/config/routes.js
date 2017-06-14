@@ -74,7 +74,6 @@ module.exports = (app) => {
           res.send({loggedIn: false})
           res.end()
         } else {
-          req.session.username = req.body.username
           res.send({loggedIn: true, user})
           res.end()
         }
@@ -110,6 +109,17 @@ module.exports = (app) => {
   })
   app.get('/get_user', (req, res) => {
     User.find({}, (e, user) => {
+      if (e) {
+        console.log(e)
+      } else {
+        res.send(user)
+        res.end()
+      }
+    })
+  })
+  app.post('/get_my_user', (req, res) => {
+    console.log(req.body.name)
+    User.find({name: req.body.name}, (e, user) => {
       if (e) {
         console.log(e)
       } else {
@@ -183,6 +193,16 @@ module.exports = (app) => {
     })
   })
   app.get('/get_country', (req, res) => {
+    Country.find({country: req.body.country}, (e, country) => {
+      if (e) {
+        console.log(e)
+      } else {
+        res.send(country)
+        res.end()
+      }
+    })
+  })
+  app.post('/get_my_country', (req, res) => {
     Country.find({}, (e, country) => {
       if (e) {
         console.log(e)

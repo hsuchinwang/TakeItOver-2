@@ -30,7 +30,7 @@ class TabBarNavigation extends React.Component {
   componentDidMount() {
     FCM.requestPermissions(); // for iOS
     FCM.getFCMToken().then(token => {
-        console.log(token)
+        // console.log(token)
         // store fcm token in your server
     });
     this.notificationListener = FCM.on(FCMEvent.Notification, async (notif) => {
@@ -77,7 +77,7 @@ class TabBarNavigation extends React.Component {
         }*/
     });
     this.refreshTokenListener = FCM.on(FCMEvent.RefreshToken, (token) => {
-        console.log(token);
+        // console.log(token);
         // fcm token may not be available on first load, catch it here
     });
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
