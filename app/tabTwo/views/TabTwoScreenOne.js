@@ -1,11 +1,38 @@
 'use strict'
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, Button, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, Button, Platform, AsyncStorage, Dimensions } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { goSecond } from '../../actions/tabTwoAction';
 //import { Item, Input, Icon } from 'native-base';
 import Puzzle from '../../components/Puzzle';
 import Modal from 'react-native-modalbox';
+import * as puzzle from '../../constants/puzzle';
+import * as Config from '../../constants/config';
+const { width, height } = Dimensions.get("window");
+
+async function getMyUser() {
+  const username = await AsyncStorage.getItem('@UserName');
+    let response = await fetch(
+      `http://${Config.SERVER_IP}:${Config.PORT}/get_my_user`,
+      {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify({
+          'name': username,
+        })
+     }
+    )
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response[0];
+}
+
 export default class TabTwoScreenOne extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
@@ -18,23 +45,42 @@ export default class TabTwoScreenOne extends React.Component {
 
   constructor(props) {// like initial function
     super(props);
+    this.init();
     this.state = {
       isRefreshing: false,
-      board: '歡迎進入奇妙的世界！',
-      titleText: "Bird's Nest",
-      bodyText: 'This is not really a bird nest.',
+      P1: "",
+      P2: "",
+      P3: "",
+      P4: "",
+      P5: "",
+      P6: "",
+      P7: "",
+      P8: "",
+      P9: "",
+      P10: "",
       isOpen: false,
       isDisabled: false,
-      swipeToClose: true,
-      sliderValue: 0.3
     };
   }
-
+  async init() {
+    const user = await getMyUser();
+    this.setState({
+      P1: user.P1,
+      P2: user.P2,
+      P3: user.P3,
+      P4: user.P4,
+      P5: user.P5,
+      P6: user.P6,
+      P7: user.P7,
+      P8: user.P8,
+      P9: user.P9,
+      P10: user.P10,
+      isRefreshing: false
+    });
+  }
   _onRefresh() {
     this.setState({isRefreshing: true});
-    setTimeout(() => {
-      this.setState({isRefreshing: false});
-    },500);
+    this.init();
   }
 
   puzzle_click(value) {
@@ -46,7 +92,8 @@ export default class TabTwoScreenOne extends React.Component {
     this.setState({isOpen: false});
   }
 
-  render(){
+  render() {
+    console.log(this.state);
     return(
       <View>
         <ScrollView
@@ -63,85 +110,24 @@ export default class TabTwoScreenOne extends React.Component {
             />
           }
         >
-        <View style={styles.row1Item} />
-          <View style={styles.row1}>
-            <Puzzle onClick={this.puzzle_click.bind(this, '555')} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
+          <View style={{flex:1, width:width, height:height, justifyContent:'center', alignItems:'center'}}>
+            <View style={styles.row1}>
+              <Puzzle P_result={this.state.P1} onClick={this.puzzle_click.bind(this, this.state.P1)} />
+              <Puzzle P_result={this.state.P2} onClick={this.puzzle_click.bind(this, this.state.P2)} />
+              <Puzzle P_result={this.state.P3} onClick={this.puzzle_click.bind(this, this.state.P3)} />
+            </View>
+            <View title="1" style={styles.row1}>
+              <Puzzle P_result={this.state.P4} onClick={this.puzzle_click.bind(this, this.state.P4)} />
+              <Puzzle P_result={this.state.P5} onClick={this.puzzle_click.bind(this, this.state.P5)} />
+              <Puzzle P_result={this.state.P6} onClick={this.puzzle_click.bind(this, this.state.P6)} />
+            </View>
+            <View title="1" style={styles.row1}>
+              <Puzzle P_result={this.state.P7} onClick={this.puzzle_click.bind(this, this.state.P7)} />
+              <Puzzle P_result={this.state.P8} onClick={this.puzzle_click.bind(this, this.state.P8)} />
+              <Puzzle P_result={this.state.P9} onClick={this.puzzle_click.bind(this, this.state.P9)} />
+            </View>
+            <Puzzle P_result={this.state.P10} onClick={this.puzzle_click.bind(this, this.state.P10)} />
           </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View style={styles.diamondContainer}>
-            <Text style={styles.diamondText}>
-              寶石：10000
-            </Text>
-          </View>
-          <TouchableOpacity
-            onPress={ () => this.props.navigation.dispatch({ type:'AAA', payload:{ index:0 } }) }
-            style={{
-              padding:20,
-              borderRadius:20,
-              backgroundColor:'blue',
-              marginTop:20
-            }}>
-            <Text>{'Go to next screen this tab'}</Text>
-          </TouchableOpacity>
         </ScrollView>
         <Modal
           style={[styles.modal, styles.modal3]}
@@ -168,12 +154,6 @@ export default class TabTwoScreenOne extends React.Component {
   }
 }
 
-// <View>
-// <Button title={"123"}>
-// OnPress={() => alert("123")}
-// </Button>
-// </View>
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -188,9 +168,6 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingVertical: 1,
     marginTop: Platform.OS == 'ios' ? 25 : 0,
-  },
-  topBlankSpace: {
-
   },
   row1: {
     width: '100%',
