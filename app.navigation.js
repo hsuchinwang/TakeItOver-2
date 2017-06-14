@@ -9,8 +9,8 @@ import configureStore from './app/store/configureStore';
 // Navigation
 import TabBarNavigation from './app/tabBar/views/TabBarNavigation';
 import io from 'socket.io-client';
-import * as Config from './app/constants/config';
 
+import * as Config from './app/constants/config';
 
 class App extends React.Component {
   static childContextTypes = {
@@ -18,7 +18,7 @@ class App extends React.Component {
   }
   constructor(props) {
     super(props);
-    this.socket = io(`${Config.SERVER_IP}:${Config.PORT}`, { transports: ['websocket'] });
+    this.socket = io(`http://bytday.com:8083`, { transports: ['websocket'] });
   }
   getChildContext() {
     return {
@@ -30,7 +30,7 @@ class App extends React.Component {
         (status) => {
           switch (status) {
             case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
-              this.setState({showDownloadingModal: true});
+              this.setState({showDownloadingModal: false});
               break;
             case CodePush.SyncStatus.INSTALLING_UPDATE:
               this.setState({showInstalling: true});

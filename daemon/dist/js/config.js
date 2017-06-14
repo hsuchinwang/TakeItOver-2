@@ -1,2 +1,2 @@
-var BASECONNECTION = 'http://54.199.248.41';
+var BASECONNECTION = 'http://bytday.com';
 var PORT = '8083';
