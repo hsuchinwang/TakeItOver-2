@@ -12,31 +12,38 @@ import { NavigationActions } from 'react-navigation'
 import * as Config from '../../constants/config';
 
 async function check_login() {
-  try {
-    let response = await fetch(
-      `http://${Config.SERVER_IP}:${Config.PORT}/check_login`,
-      {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
-     }
-    )
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error(error);
-      return error;
-    });
-    if (response.loggedIn) {
-      await AsyncStorage.setItem('@User', JSON.stringify(response.user));
-      this.props.navigation.navigate('Home');
-    } else {
-      this.props.navigation.navigate('Login');
-    }
-  } catch(error) {
-    console.log(error);
+  
+  const isLogined = await AsyncStorage.getItem('@isLogined');
+  if (isLogined == "Y") {
+    this.props.navigation.navigate('Home');
+  } else {
+    this.props.navigation.navigate('Login');
   }
+  // try {
+  //   let response = await fetch(
+  //     `http://${Config.SERVER_IP}:${Config.PORT}/check_login`,
+  //     {
+  //     method: 'GET',
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json',
+  //     }
+  //    }
+  //   )
+  //   .then((response) => response.json())
+  //   .catch((error) => {
+  //     console.error(error);
+  //     return error;
+  //   });
+  //   if (response.loggedIn) {
+  //     await AsyncStorage.setItem('@User', JSON.stringify(response.user));
+  //     this.props.navigation.navigate('Home');
+  //   } else {
+  //     this.props.navigation.navigate('Login');
+  //   }
+  // } catch(error) {
+  //   console.log(error);
+  // }
 }
 export default class SplashScreen extends React.Component {
   constructor(props) {
@@ -49,12 +56,12 @@ export default class SplashScreen extends React.Component {
   }
 
   componentDidMount() {
+    check_login.bind(this)();
     setTimeout(()=>{
       this.setState({
         isVisible: false
       });
-      check_login.bind(this)();
-    }, 3000);
+    }, 1500);
   }
   render() {
     return(

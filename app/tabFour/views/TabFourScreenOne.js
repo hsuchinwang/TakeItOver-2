@@ -71,7 +71,7 @@ export default class TabFourScreenOne extends React.Component {
               <Text>{'Go to next screen this tab'}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={ () => socket.emit('message',{A: '123'}) }
+              onPress={ () => socket.emit('message',{A: '爭個你死我活'}) }
               style={{
                 padding:20,
                 borderRadius:20,

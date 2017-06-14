@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react';
-import { View, Text, Image, StyleSheet, Platform, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, Platform, ScrollView, AsyncStorage } from 'react-native';
 import { StackNavigator, DrawerNavigator, DrawerItems, NavigationActions } from 'react-navigation';
 // Screens
 import TabOneScreenOne from './views/TabOneScreenOne';
@@ -26,6 +26,7 @@ const SideDrawer = (props) => {
       <DrawerItems {...props} 
         onItemPress={(route) => {
           if (route.route.routeName === 'TabOneDrawerSix') {
+            AsyncStorage.setItem('@isLogined', 'N');
             fetch(`http://${Config.SERVER_IP}:${Config.PORT}/logout`);
             props.navigation.navigate('DrawerClose');
             props.navigation.navigate('Login');

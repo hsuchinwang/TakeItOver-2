@@ -14,6 +14,7 @@
     <script src="js/sweet-alert.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/config.js"></script>
     <!-- Bootstrap -->
     <link href="css/sweet-alert.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -91,8 +92,6 @@
         <div block-ui="main" class="block-ui-main"></div>
     </div>
     <script>
-    var BASECONNECTION = 'http://localhost';
-    var PORT = '8083';
     function record() {
         $.ajax({
                 url: BASECONNECTION + ':' + PORT + '/get_record',

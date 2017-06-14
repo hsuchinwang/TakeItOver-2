@@ -52,38 +52,28 @@ var server = app.listen(port)
 // websocket
 // var http = require('http').Server(app);
 var io = require('socket.io')(server)
-var Message = require('./models/message')
+// var Message = require('./models/message')
 var users = {}
 io.on('connection', (socket) => {
   // 监听用户发布聊天内容
   socket.on('message', (obj) => {
     // 向所有客户端广播发布的消息
     io.emit('message', obj)
-    var mess = {
-      username: obj.username,
-      src: obj.src,
-      msg: obj.msg,
-      roomid: 'room1'
-    }
-    var message = new Message(mess)
-    // 将发送过来的消息进行储存
-    message.save((err, mess) => {
-      if (err) {
-        console.log(err)
-      }
-        console.log(mess)
-    })
-    console.log(obj.username + '说：' + obj.msg)
-  })
-  socket.on('login', (obj) => {
-    users[obj.name] = obj
-    // 用于监听用户进行聊天室
-    io.emit('login', users)
-  })
-  socket.on('logout', (name) => {
-    delete users[name]
-    // 用户监听用退出聊天室
-    io.emit('logout', users)
+    // var mess = {
+    //   username: obj.username,
+    //   src: obj.src,
+    //   msg: obj.msg,
+    //   roomid: 'room1'
+    // }
+    // var message = new Message(mess)
+    // // 将发送过来的消息进行储存
+    // message.save((err, mess) => {
+    //   if (err) {
+    //     console.log(err)
+    //   }
+    //     console.log(mess)
+    // })
+    // console.log(obj.username + '说：' + obj.msg)
   })
 })
 

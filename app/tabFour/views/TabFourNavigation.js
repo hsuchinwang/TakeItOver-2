@@ -2,7 +2,7 @@
 
 // React
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, StyleSheet, Image } from 'react-native';
 // Navigation
 import { addNavigationHelpers } from 'react-navigation';
 import { NavigatorTabFour } from '../navigationConfiguration';
@@ -31,10 +31,9 @@ class TabFourNavigation extends React.Component {
   static navigationOptions = {
     tabBarLabel: '領土爭奪',
     tabBarIcon: ({ tintColor, focused }) => (
-      <Ionicons
-        name={focused ? 'ios-flag' : 'ios-flag-outline'}
-        size={Platform.OS == 'ios' ? 30 : 30}
-        style={{ color: '#eff0f4' }}
+      <Image
+        source={require('../../images/tabIcons/banner-01.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
       />
     )
   }
@@ -55,3 +54,10 @@ class TabFourNavigation extends React.Component {
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TabFourNavigation)
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 30,
+    height: 30,
+  },
+});

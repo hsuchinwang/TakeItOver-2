@@ -1,7 +1,7 @@
 'use strict'
 // React
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, StyleSheet, Image } from 'react-native';
 // Navigation
 import { addNavigationHelpers } from 'react-navigation';
 import { NavigatorTabThree } from '../navigationConfiguration';
@@ -20,10 +20,9 @@ class TabThreeNavigation extends React.Component {
   static navigationOptions = {
     tabBarLabel: '尋寶',
     tabBarIcon: ({ tintColor, focused }) => (
-      <Ionicons
-        name={focused ? 'ios-eye' : 'ios-eye-outline'}
-        size={Platform.OS == 'ios' ? 30 : 30}
-        style={{ color: '#eff0f4' }}
+      <Image
+        source={require('../../images/tabIcons/map-01.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
       />
     )
   }
@@ -43,3 +42,10 @@ class TabThreeNavigation extends React.Component {
 }
 
 export default connect(mapStateToProps)(TabThreeNavigation)
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 30,
+    height: 30,
+  },
+});
