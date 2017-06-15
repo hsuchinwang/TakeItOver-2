@@ -48,3 +48,30 @@ export async function api_buyHint(cost, puzzle, puzzle_result) {
     });
     return response;
 }
+export async function api_giveScore(K, password, puzzle_result, puzzle) {
+  const username = await AsyncStorage.getItem('@UserName');
+  // const userCountry = await AsyncStorage.getItem('@UserCountry');
+    let response = await fetch(
+      `http://${Config.SERVER_IP}:${Config.PORT}/puzzle_give_score`,
+      {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify({
+          'name': username,
+          'K': K,
+          'password': password,
+          'puzzle_result': puzzle_result,
+          'puzzle': puzzle,
+        })
+     }
+    )
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response;
+}

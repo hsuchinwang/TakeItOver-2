@@ -274,7 +274,7 @@ module.exports = (app) => {
       }
     })
   })
-  app.post('/update_user_pizzle', (req, res) => {
+  app.post('/update_user_puzzle', (req, res) => {
     User.update(
       {
         name: req.body.name
@@ -329,6 +329,43 @@ module.exports = (app) => {
     }, function(e, data) {
         console.log(data)
     })
+  })
+  app.post('/puzzle_give_score', (req, res) => {
+    var puzzleUpdate = { $set: {} }
+    puzzleUpdate.$set[req.body.puzzle] = req.body.puzzle_result
+    if (req.body.password === '1X4QWE') {
+      User.update(
+        {
+          name: req.body.name
+        },
+        puzzleUpdate,
+        (e, user) => {
+        if (e) console.log(e)
+      })
+      User.update(
+        {
+          name: req.body.name
+        },
+        {
+          $inc: {
+            K: req.body.K
+          }
+        },
+        (e, user) => {
+        if (e) console.log(e)
+      })
+      Setting.update({}, {
+          $push: {
+              day1_puzzle: '時間為：' + new Date() + ' /組別：' + req.body.name + ' /' + req.body.puzzle + ':' + req.body.puzzle_result
+          }
+      }, function(e, data) {
+      })
+      res.send({data: true})
+      res.end()
+    } else {
+      res.send({data: false})
+      res.end()
+    }
   })
   app.post('/buy_hint', (req, res) => {
     var puzzleUpdate = { $set: {} }

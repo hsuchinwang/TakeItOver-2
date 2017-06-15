@@ -7,7 +7,7 @@ import Puzzle from '../../components/Puzzle';
 import Modal from 'react-native-modalbox';
 import * as puzzle from '../../constants/puzzle';
 import * as Config from '../../constants/config';
-import { getMyUser, api_buyHint } from '../../api/api';
+import { getMyUser, api_buyHint, api_giveScore } from '../../api/api';
 import ScorePuzzle from '../../components/ScorePuzzle';
 const { width, height } = Dimensions.get("window");
 
@@ -42,8 +42,6 @@ export default class TabTwoScreenOne extends React.Component {
       isDisabled: false,
       cost: "0",
       puzzle:"",
-      password:"",
-      K:0,
     };
   }
   async init() {
@@ -91,15 +89,15 @@ export default class TabTwoScreenOne extends React.Component {
     alert('提示');
     this.setState({isOpen: false});
   }
-  giveScore() {
-    alert('給分數');
+  async giveScore(value) {
+    const flag = await api_giveScore(value.K, value.password, value.puzzle_result, this.state.puzzle);
+    if (flag.data) {
+      alert('輸入成功');
+      this.init();
+    } else {
+      alert('密碼錯誤別亂試～');
+    }
     this.setState({isOpen: false});
-  }
-  onChange(e) {
-    console.log(e);
-    // this.setState({
-
-    // })
   }
   async buyHint() {
     const flag = await api_buyHint(this.state.cost, this.state.puzzle, 'W');
@@ -112,7 +110,6 @@ export default class TabTwoScreenOne extends React.Component {
     this.setState({isOpen: false});
   }
   render() {
-    console.log(this.state);
     return(
       <View>
         <ScrollView
@@ -186,15 +183,14 @@ export default class TabTwoScreenOne extends React.Component {
           ref={"N_modal"}
           isOpen={this.state.isOpen}
         >
-           <Text style={styles.text}>空的，關主輸入視窗</Text>
-           <View sytle={{width:200, height:200}}>
-           <ScorePuzzle Submit={this.giveScore.bind(this)}/>
-           </View>
-          <Button
-            title={`Cancel`}
-            onPress={() => this.setState({isOpen: false})}
-            style={styles.btn}>
-         </Button>
+          <View style={{flex:1, width:'100%', justifyContent:'center'}}>
+            <ScorePuzzle Submit={this.giveScore.bind(this)}/>
+            <Button
+              title={`Cancel`}
+              onPress={() => this.setState({isOpen: false})}
+              style={styles.btn}>
+           </Button>
+         </View>
         </Modal>
       </View>
     )

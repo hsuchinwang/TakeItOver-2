@@ -14,30 +14,48 @@ import {
   Alert,
 } from 'react-native';
 const { width, height } = Dimensions.get("window");
+const background = require("../images/login1_bg.png");
+const mark = require("../images/login1_mark.png");
+const lockIcon = require("../images/login1_lock.png");
+const personIcon = require("../images/login1_person.png");
 
-const renderNameInput = ({ input: { onChange, ...restInput }}) => {
-  return <TextInput placeholder="關主密碼" placeholderTextColor="#FFF" style={styles.input} onChangeText={onChange} {...restInput} />
-}
 const renderPassWordInput = ({ input: { onChange, ...restInput }}) => {
-  return <TextInput placeholder="K寶" placeholderTextColor="#FFF"  style={styles.input} secureTextEntry onChangeText={onChange} {...restInput} />
+  return <TextInput placeholder="關主密碼" placeholderTextColor="#000" style={styles.input} secureTextEntry onChangeText={onChange} {...restInput} />
 }
-
+const renderKInput = ({ input: { onChange, ...restInput }}) => {
+  return <TextInput keyboardType={'email-address'} placeholder="K寶" placeholderTextColor="#000"  style={styles.input}  onChangeText={onChange} {...restInput} />
+}
+const renderPuzzleResultInput = ({ input: { onChange, ...restInput }}) => {
+  return <TextInput placeholder="Win or Lose" placeholderTextColor="#000"  style={styles.input}  onChangeText={onChange} {...restInput} />
+}
 class ScorePuzzle extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
   return (
-      <View style={styles.container}>
+      <View style={styles.container}>  
         <View style={styles.inputWrap}>
-          <Field name="username" component={renderNameInput} />
+          <View style={styles.iconWrap}>
+            <Image source={lockIcon} style={styles.icon} resizeMode="contain" />
+          </View>
+          <Field name="puzzle_result" component={renderPuzzleResultInput} />
         </View>
         <View style={styles.inputWrap}>
-        <Field name="password" component={renderPassWordInput} />
+          <View style={styles.iconWrap}>
+            <Image source={lockIcon} style={styles.icon} resizeMode="contain" />
+          </View>
+          <Field name="K" component={renderKInput} />
+        </View>
+        <View style={styles.inputWrap}>
+          <View style={styles.iconWrap}>
+            <Image source={lockIcon} style={styles.icon} resizeMode="contain" />
+          </View>
+          <Field name="password" component={renderPassWordInput} />
         </View>
         <TouchableOpacity activeOpacity={.5} onPress={this.props.handleSubmit(this.props.Submit)}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>登入</Text>
+              <Text style={styles.buttonText}>確定</Text>
             </View>
         </TouchableOpacity>
       </View>
@@ -86,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "#FF3366",
+    backgroundColor: 'black',
     paddingVertical: 20,
     alignItems: "center",
     justifyContent: "center",
