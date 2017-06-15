@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     DrawerContainer: {
       flex:1,
       marginTop: Platform == "ios" ? 25 : 0,
-      backgroundColor: 'gray'
+      backgroundColor: 'white'
     },
     drawerHeader: {
       flex:1
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
       justifyContent:'center',
     },
     drawerIcon: {
-        width: 100,
-        height: '50%',
-        borderRadius:10,
+        width: '100%',
+        height: '100%',
+        // borderRadius:10,
     },
 });
 const stackNavigatorConfiguration = {

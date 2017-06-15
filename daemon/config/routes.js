@@ -118,7 +118,6 @@ module.exports = (app) => {
     })
   })
   app.post('/get_my_user', (req, res) => {
-    console.log(req.body.name)
     User.find({name: req.body.name}, (e, user) => {
       if (e) {
         console.log(e)
@@ -308,17 +307,14 @@ module.exports = (app) => {
         console.log(data)
     })
   })
-  app.post('/update_user_pizzle_single', (req, res) => {
-    console.log(req.body)
-    console.log(req.body.pizzle)
-    console.log(req.body.pizzle_result)
-    var pizzleUpdate = { $set: {} }
-    pizzleUpdate.$set[req.body.pizzle] = req.body.pizzle_result
+  app.post('/update_user_puzzle_single', (req, res) => {
+    var puzzleUpdate = { $set: {} }
+    puzzleUpdate.$set[req.body.puzzle] = req.body.puzzle_result
     User.update(
       {
         name: req.body.name
       },
-      pizzleUpdate,
+      puzzleUpdate,
       (e, user) => {
       if (e) {
         console.log(e)
@@ -328,11 +324,73 @@ module.exports = (app) => {
     })
     Setting.update({}, {
         $push: {
-            day1_pizzle: '時間為：' + new Date() + ' /組別：' + req.body.name + ' /' + req.body.pizzle + ':' + req.body.pizzle_result
+            day1_puzzle: '時間為：' + new Date() + ' /組別：' + req.body.name + ' /' + req.body.puzzle + ':' + req.body.puzzle_result
         }
     }, function(e, data) {
         console.log(data)
     })
+  })
+  app.post('/buy_hint', (req, res) => {
+    var puzzleUpdate = { $set: {} }
+    puzzleUpdate.$set[req.body.puzzle] = req.body.puzzle_result
+    buyHint()
+    async function buyHint() {
+      User.find({name: req.body.name}, async (e, user) => {
+        if (e) {
+          console.log(e)
+        } else {
+          if (user[0].K >= 25 && user[0].country === 'M') {
+            await updateK()
+            await updateP()
+            await record()
+            res.send({data: true})
+            res.end()
+          } else if (user[0].K >= 30 && user[0].country !== 'M') {
+            await updateK()
+            await updateP()
+            await record()
+            res.send({data: true})
+            res.end()
+          } else {
+            res.send({data: false})
+            res.end()
+          }
+        }
+      })
+    }
+    function updateK() {
+      User.update(
+        {
+          name: req.body.name
+        },
+        {
+          $inc: {
+            K: -(+req.body.cost)
+          }
+        },
+        (e, user) => {
+        if (e) console.log(e)
+      })
+    }
+    function updateP() {
+      User.update(
+        {
+          name: req.body.name
+        },
+        puzzleUpdate,
+        (e, user) => {
+        if (e) console.log(e)
+      })
+    }
+    function record() {
+      Setting.update({}, {
+        $push: {
+            day1_puzzle: '時間為：' + new Date() + ' /組別：' + req.body.name + ' /' + req.body.puzzle + ':' + req.body.puzzle_result
+        }
+      }, function(e, data) {
+          // console.log(data)
+      })
+    }
   })
   app.post('/update_user_resource', (req, res) => {
     User.update(

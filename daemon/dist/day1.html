@@ -211,7 +211,7 @@
                     <br>
                 </div>
                 <div class="col-md-1 col-lg-1" style="margin-top:25px;">
-                    <button style="width:140px;" ng-click="submit('pizzle');" type="button" class="col-md-6 col-lg-6 col-xs-12 col-sm-12 btn btn-primary">確定</button>
+                    <button style="width:140px;" ng-click="submit('puzzle');" type="button" class="col-md-6 col-lg-6 col-xs-12 col-sm-12 btn btn-primary">確定</button>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -219,8 +219,8 @@
                     <H5>九宮格(單一):</H5>
                 </div>
                 <div class="col-md-2">
-                    <label for="pizzle">關卡:</label>
-                    <select class="form-control" id="pizzle">
+                    <label for="puzzle">關卡:</label>
+                    <select class="form-control" id="puzzle">
                         <option>P1</option>
                         <option>P2</option>
                         <option>P3</option>
@@ -233,15 +233,15 @@
                     </select>
                 </div>
                 <div class="col-md-1">
-                    <label for="pizzle_result">結果:</label>
-                    <select class="form-control" id="pizzle_result">
+                    <label for="puzzle_result">結果:</label>
+                    <select class="form-control" id="puzzle_result">
                         <option>W</option>
                         <option>N</option>
                         <option>L</option>
                     </select>
                 </div>
                 <div class="col-md-1 col-lg-1" style="margin-top:25px;">
-                    <button style="width:140px;" ng-click="submit('pizzle_single');" type="button" class="col-md-6 col-lg-6 col-xs-12 col-sm-12 btn btn-primary">確定</button>
+                    <button style="width:140px;" ng-click="submit('puzzle_single');" type="button" class="col-md-6 col-lg-6 col-xs-12 col-sm-12 btn btn-primary">確定</button>
                 </div>
             </div>
         </div>
@@ -440,13 +440,13 @@
                 var B8 = $('#B8').val();
                 var B9 = $('#B9').val();
                 var B10 = $('#B10').val();
-                var pizzle = $('#pizzle').val();
-                var pizzle_result = $('#pizzle_result').val();
+                var puzzle = $('#puzzle').val();
+                var puzzle_result = $('#puzzle_result').val();
                 //var bread = $('#bread').val();
-                if (flag == 'pizzle') {
+                if (flag == 'puzzle') {
                     $http({
                         method: 'POST',
-                        url: BASECONNECTION + ':' + PORT + '/update_user_pizzle',
+                        url: BASECONNECTION + ':' + PORT + '/update_user_puzzle',
                         data: {
                             name: team,
                             P1: B1,
@@ -489,14 +489,14 @@
                         alert('failed');
                     });
                 }
-                if (flag == 'pizzle_single') {
+                if (flag == 'puzzle_single') {
                     $http({
                         method: 'POST',
-                        url: BASECONNECTION + ':' + PORT + '/update_user_pizzle_single',
+                        url: BASECONNECTION + ':' + PORT + '/update_user_puzzle_single',
                         data: {
                             name: team,
-                            pizzle: pizzle,
-                            pizzle_result: pizzle_result
+                            puzzle: puzzle,
+                            puzzle_result: puzzle_result
                         }
                     }).success(function(data) {
                         blockUI.stop();

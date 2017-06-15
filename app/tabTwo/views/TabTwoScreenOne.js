@@ -1,37 +1,15 @@
 'use strict'
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, Button, Platform, AsyncStorage, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, Button, Platform, AsyncStorage, Dimensions, TextInput } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { goSecond } from '../../actions/tabTwoAction';
-//import { Item, Input, Icon } from 'native-base';
 import Puzzle from '../../components/Puzzle';
 import Modal from 'react-native-modalbox';
 import * as puzzle from '../../constants/puzzle';
 import * as Config from '../../constants/config';
+import { getMyUser, api_buyHint } from '../../api/api';
+import ScorePuzzle from '../../components/ScorePuzzle';
 const { width, height } = Dimensions.get("window");
-
-async function getMyUser() {
-  const username = await AsyncStorage.getItem('@UserName');
-    let response = await fetch(
-      `http://${Config.SERVER_IP}:${Config.PORT}/get_my_user`,
-      {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-        body: JSON.stringify({
-          'name': username,
-        })
-     }
-    )
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error(error);
-      return error;
-    });
-    return response[0];
-}
 
 export default class TabTwoScreenOne extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -58,8 +36,14 @@ export default class TabTwoScreenOne extends React.Component {
       P8: "",
       P9: "",
       P10: "",
+      character: "",
+      hint: "",
       isOpen: false,
       isDisabled: false,
+      cost: "0",
+      puzzle:"",
+      password:"",
+      K:0,
     };
   }
   async init() {
@@ -75,7 +59,8 @@ export default class TabTwoScreenOne extends React.Component {
       P8: user.P8,
       P9: user.P9,
       P10: user.P10,
-      isRefreshing: false
+      isRefreshing: false,
+      cost: user.country == 'M' ? "25" : "30",
     });
   }
   _onRefresh() {
@@ -83,15 +68,49 @@ export default class TabTwoScreenOne extends React.Component {
     this.init();
   }
 
-  puzzle_click(value) {
-    this.refs.modal3.open();
+  puzzle_click(P_result, P) {
+    this.setState({
+      puzzle: P,
+    })
+    if (P_result == 'W') {
+      this.setState({
+        character: puzzle[P].character,
+        hint: puzzle[P].hint
+      })
+      this.refs.W_modal.open();
+    }
+    if (P_result == "L") {
+      this.refs.L_modal.open();
+    }
+    if (P_result == "N") {
+      this.refs.N_modal.open();
+    }
   }
 
-  addDiamonSuccess() {
-    alert('新增寶石成功！');
+  getHint() {
+    alert('提示');
     this.setState({isOpen: false});
   }
+  giveScore() {
+    alert('給分數');
+    this.setState({isOpen: false});
+  }
+  onChange(e) {
+    console.log(e);
+    // this.setState({
 
+    // })
+  }
+  async buyHint() {
+    const flag = await api_buyHint(this.state.cost, this.state.puzzle, 'W');
+    if (flag.data) {
+      alert('購買成功');
+      this.init();
+    } else {
+      alert('K寶不足');
+    }
+    this.setState({isOpen: false});
+  }
   render() {
     console.log(this.state);
     return(
@@ -112,34 +131,47 @@ export default class TabTwoScreenOne extends React.Component {
         >
           <View style={{flex:1, width:width, height:height, justifyContent:'center', alignItems:'center'}}>
             <View style={styles.row1}>
-              <Puzzle P_result={this.state.P1} onClick={this.puzzle_click.bind(this, this.state.P1)} />
-              <Puzzle P_result={this.state.P2} onClick={this.puzzle_click.bind(this, this.state.P2)} />
-              <Puzzle P_result={this.state.P3} onClick={this.puzzle_click.bind(this, this.state.P3)} />
+              <Puzzle P_result={this.state.P1} onClick={this.puzzle_click.bind(this, this.state.P1, 'P1')} />
+              <Puzzle P_result={this.state.P2} onClick={this.puzzle_click.bind(this, this.state.P2, 'P2')} />
+              <Puzzle P_result={this.state.P3} onClick={this.puzzle_click.bind(this, this.state.P3, 'P3')} />
             </View>
             <View title="1" style={styles.row1}>
-              <Puzzle P_result={this.state.P4} onClick={this.puzzle_click.bind(this, this.state.P4)} />
-              <Puzzle P_result={this.state.P5} onClick={this.puzzle_click.bind(this, this.state.P5)} />
-              <Puzzle P_result={this.state.P6} onClick={this.puzzle_click.bind(this, this.state.P6)} />
+              <Puzzle P_result={this.state.P4} onClick={this.puzzle_click.bind(this, this.state.P4, 'P4')} />
+              <Puzzle P_result={this.state.P5} onClick={this.puzzle_click.bind(this, this.state.P5, 'P5')} />
+              <Puzzle P_result={this.state.P6} onClick={this.puzzle_click.bind(this, this.state.P6, 'P6')} />
             </View>
             <View title="1" style={styles.row1}>
-              <Puzzle P_result={this.state.P7} onClick={this.puzzle_click.bind(this, this.state.P7)} />
-              <Puzzle P_result={this.state.P8} onClick={this.puzzle_click.bind(this, this.state.P8)} />
-              <Puzzle P_result={this.state.P9} onClick={this.puzzle_click.bind(this, this.state.P9)} />
+              <Puzzle P_result={this.state.P7} onClick={this.puzzle_click.bind(this, this.state.P7, 'P7')} />
+              <Puzzle P_result={this.state.P8} onClick={this.puzzle_click.bind(this, this.state.P8, 'P8')} />
+              <Puzzle P_result={this.state.P9} onClick={this.puzzle_click.bind(this, this.state.P9, 'P9')} />
             </View>
-            <Puzzle P_result={this.state.P10} onClick={this.puzzle_click.bind(this, this.state.P10)} />
+            <Puzzle P_result={this.state.P10} onClick={this.puzzle_click.bind(this, this.state.P10, 'P10')} />
           </View>
         </ScrollView>
         <Modal
-          style={[styles.modal, styles.modal3]}
+          style={[styles.modal]}
           position={"center"}
-          ref={"modal3"}
-          //isDisabled={this.state.isDisabled}
+          ref={"W_modal"}
           isOpen={this.state.isOpen}
         >
-           <Text style={styles.text}>Modal centered</Text>
+          <Text style={styles.text}>{this.state.character}</Text>
+          <Text style={styles.text}>{this.state.hint}</Text>
+          <Button
+            title={`Cancel`}
+            onPress={() => this.setState({isOpen: false})}
+            style={styles.btn}>
+         </Button>
+        </Modal>
+        <Modal
+          style={[styles.modal]}
+          position={"center"}
+          ref={"L_modal"}
+          isOpen={this.state.isOpen}
+        >
+           <Text style={styles.text}>Lose, 是否花{this.state.cost}個K寶石購買提示</Text>
            <Button
              title={`OK`}
-             onPress={this.addDiamonSuccess.bind(this)}
+             onPress={this.buyHint.bind(this)}
              style={styles.btn}>
           </Button>
           <Button
@@ -147,9 +179,24 @@ export default class TabTwoScreenOne extends React.Component {
             onPress={() => this.setState({isOpen: false})}
             style={styles.btn}>
          </Button>
-         </Modal>
+        </Modal>
+        <Modal
+          style={[styles.modal]}
+          position={"center"}
+          ref={"N_modal"}
+          isOpen={this.state.isOpen}
+        >
+           <Text style={styles.text}>空的，關主輸入視窗</Text>
+           <View sytle={{width:200, height:200}}>
+           <ScorePuzzle Submit={this.giveScore.bind(this)}/>
+           </View>
+          <Button
+            title={`Cancel`}
+            onPress={() => this.setState({isOpen: false})}
+            style={styles.btn}>
+         </Button>
+        </Modal>
       </View>
-
     )
   }
 }
@@ -167,7 +214,10 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: 1,
-    marginTop: Platform.OS == 'ios' ? 25 : 0,
+  },
+  input: {
+    flex: 1,
+    paddingHorizontal: 10,
   },
   row1: {
     width: '100%',
@@ -257,23 +307,21 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   modal: {
-  justifyContent: 'center',
-  alignItems: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:300,
+    height:300,
+    borderWidth: 3,
+    borderColor:'rgba(252,252,252,0.5)',
+    borderRadius: 10,
+    shadowColor: "#000000",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 3,
+      width: 0
+    }
   },
-  modal2: {
-    height: 230,
-    backgroundColor: "#3B5998"
-  },
-
-  modal3: {
-    height: 300,
-    width: 300
-  },
-
-  modal4: {
-    height: 300
-  },
-
   btn: {
     margin: 10,
     backgroundColor: "#3B5998",
@@ -291,6 +339,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "black",
-    fontSize: 22
+    fontSize: 14
   }
 });

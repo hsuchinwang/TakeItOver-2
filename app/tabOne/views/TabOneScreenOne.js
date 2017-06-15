@@ -18,32 +18,11 @@ import * as Config from '../../constants/config';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
-
+import { getMyUser } from '../../api/api';
 const { width, height } = Dimensions.get("window");
+
 async function getFlagFromSetting() {
     let response = await fetch(`http://${Config.SERVER_IP}:${Config.PORT}/get_setting`)
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error(error);
-      return error;
-    });
-    return response[0];
-}
-async function getMyUser() {
-  const username = await AsyncStorage.getItem('@UserName');
-    let response = await fetch(
-      `http://${Config.SERVER_IP}:${Config.PORT}/get_my_user`,
-      {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-        body: JSON.stringify({
-          'name': username,
-        })
-     }
-    )
     .then((response) => response.json())
     .catch((error) => {
       console.error(error);
