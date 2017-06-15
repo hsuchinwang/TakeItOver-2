@@ -32,7 +32,11 @@ export default class TabOneScreenFour extends React.Component {
   render(){
     return(
       <BackgroundImage url="Fire">
-        <Text style={styles.text}>{ '國家歷史' }</Text>
+        <View style={styles.main}>
+          <View style={styles.box}>
+            <Text style={styles.text}>{ '國家歷史' }</Text>
+          </View>
+        </View>
       </BackgroundImage>
     )
   }
@@ -40,8 +44,21 @@ export default class TabOneScreenFour extends React.Component {
 const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
-        color: 'white',
+        color: 'black',
         backgroundColor: 'rgba(0,0,0,0)',
         fontSize: 32
+    },
+    box: {
+      height: 200,
+      width: 200,
+      backgroundColor: "#ffffff",
+      borderRadius: 10,
+      shadowColor: "#000000",
+      shadowOpacity: 0.8,
+      shadowRadius: 2,
+      shadowOffset: {
+        height: 10,
+        width: 0
+      }
     }
 });

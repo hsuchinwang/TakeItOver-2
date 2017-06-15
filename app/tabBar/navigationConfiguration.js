@@ -58,4 +58,3 @@ const StackConfiguration = {
   },
 }
 export const TabBar = StackNavigator(StackrouteConfiguration, StackConfiguration);
-

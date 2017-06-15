@@ -1,11 +1,16 @@
 'use strict'
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, Button, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, RefreshControl, Button, Platform, AsyncStorage, Dimensions, TextInput } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { goSecond } from '../../actions/tabTwoAction';
-//import { Item, Input, Icon } from 'native-base';
 import Puzzle from '../../components/Puzzle';
 import Modal from 'react-native-modalbox';
+import * as puzzle from '../../constants/puzzle';
+import * as Config from '../../constants/config';
+import { getMyUser, api_buyHint, api_giveScore } from '../../api/api';
+import ScorePuzzle from '../../components/ScorePuzzle';
+const { width, height } = Dimensions.get("window");
+
 export default class TabTwoScreenOne extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
@@ -18,35 +23,93 @@ export default class TabTwoScreenOne extends React.Component {
 
   constructor(props) {// like initial function
     super(props);
+    this.init();
     this.state = {
       isRefreshing: false,
-      board: '歡迎進入奇妙的世界！',
-      titleText: "Bird's Nest",
-      bodyText: 'This is not really a bird nest.',
+      P1: "",
+      P2: "",
+      P3: "",
+      P4: "",
+      P5: "",
+      P6: "",
+      P7: "",
+      P8: "",
+      P9: "",
+      P10: "",
+      character: "",
+      hint: "",
       isOpen: false,
       isDisabled: false,
-      swipeToClose: true,
-      sliderValue: 0.3
+      cost: "0",
+      puzzle:"",
     };
   }
-
+  async init() {
+    const user = await getMyUser();
+    this.setState({
+      P1: user.P1,
+      P2: user.P2,
+      P3: user.P3,
+      P4: user.P4,
+      P5: user.P5,
+      P6: user.P6,
+      P7: user.P7,
+      P8: user.P8,
+      P9: user.P9,
+      P10: user.P10,
+      isRefreshing: false,
+      cost: user.country == 'M' ? "25" : "30",
+    });
+  }
   _onRefresh() {
     this.setState({isRefreshing: true});
-    setTimeout(() => {
-      this.setState({isRefreshing: false});
-    },500);
+    this.init();
   }
 
-  puzzle_click(value) {
-    this.refs.modal3.open();
+  puzzle_click(P_result, P) {
+    this.setState({
+      puzzle: P,
+    })
+    if (P_result == 'W') {
+      this.setState({
+        character: puzzle[P].character,
+        hint: puzzle[P].hint
+      })
+      this.refs.W_modal.open();
+    }
+    if (P_result == "L") {
+      this.refs.L_modal.open();
+    }
+    if (P_result == "N") {
+      this.refs.N_modal.open();
+    }
   }
 
-  addDiamonSuccess() {
-    alert('新增寶石成功！');
+  getHint() {
+    alert('提示');
     this.setState({isOpen: false});
   }
-
-  render(){
+  async giveScore(value) {
+    const flag = await api_giveScore(value.K, value.password, value.puzzle_result, this.state.puzzle);
+    if (flag.data) {
+      alert('輸入成功');
+      this.init();
+    } else {
+      alert('密碼錯誤別亂試～');
+    }
+    this.setState({isOpen: false});
+  }
+  async buyHint() {
+    const flag = await api_buyHint(this.state.cost, this.state.puzzle, 'W');
+    if (flag.data) {
+      alert('購買成功');
+      this.init();
+    } else {
+      alert('K寶不足');
+    }
+    this.setState({isOpen: false});
+  }
+  render() {
     return(
       <View>
         <ScrollView
@@ -63,97 +126,51 @@ export default class TabTwoScreenOne extends React.Component {
             />
           }
         >
-        <View style={styles.row1Item} />
-          <View style={styles.row1}>
-            <Puzzle onClick={this.puzzle_click.bind(this, '555')} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
+
+          <View style={{flex:1, width:width, height:height, justifyContent:'center', alignItems:'center'}}>
+            <View style={styles.row1}>
+              <Puzzle P_result={this.state.P1} onClick={this.puzzle_click.bind(this, this.state.P1, 'P1')} />
+              <Puzzle P_result={this.state.P2} onClick={this.puzzle_click.bind(this, this.state.P2, 'P2')} />
+              <Puzzle P_result={this.state.P3} onClick={this.puzzle_click.bind(this, this.state.P3, 'P3')} />
+            </View>
+            <View title="1" style={styles.row1}>
+              <Puzzle P_result={this.state.P4} onClick={this.puzzle_click.bind(this, this.state.P4, 'P4')} />
+              <Puzzle P_result={this.state.P5} onClick={this.puzzle_click.bind(this, this.state.P5, 'P5')} />
+              <Puzzle P_result={this.state.P6} onClick={this.puzzle_click.bind(this, this.state.P6, 'P6')} />
+            </View>
+            <View title="1" style={styles.row1}>
+              <Puzzle P_result={this.state.P7} onClick={this.puzzle_click.bind(this, this.state.P7, 'P7')} />
+              <Puzzle P_result={this.state.P8} onClick={this.puzzle_click.bind(this, this.state.P8, 'P8')} />
+              <Puzzle P_result={this.state.P9} onClick={this.puzzle_click.bind(this, this.state.P9, 'P9')} />
+            </View>
+            <Puzzle P_result={this.state.P10} onClick={this.puzzle_click.bind(this, this.state.P10, 'P10')} />
+
           </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View title="1" style={styles.row1}>
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-            <View title="1" style={styles.row1Item} />
-          </View>
-          <View style={styles.diamondContainer}>
-            <Text style={styles.diamondText}>
-              寶石：10000
-            </Text>
-          </View>
-          <TouchableOpacity
-            onPress={ () => this.props.navigation.dispatch({ type:'AAA', payload:{ index:0 } }) }
-            style={{
-              padding:20,
-              borderRadius:20,
-              backgroundColor:'blue',
-              marginTop:20
-            }}>
-            <Text>{'Go to next screen this tab'}</Text>
-          </TouchableOpacity>
         </ScrollView>
         <Modal
-          style={[styles.modal, styles.modal3]}
+          style={[styles.modal]}
           position={"center"}
-          ref={"modal3"}
-          //isDisabled={this.state.isDisabled}
+          ref={"W_modal"}
           isOpen={this.state.isOpen}
         >
-           <Text style={styles.text}>Modal centered</Text>
+          <Text style={styles.text}>{this.state.character}</Text>
+          <Text style={styles.text}>{this.state.hint}</Text>
+          <Button
+            title={`Cancel`}
+            onPress={() => this.setState({isOpen: false})}
+            style={styles.btn}>
+         </Button>
+        </Modal>
+        <Modal
+          style={[styles.modal]}
+          position={"center"}
+          ref={"L_modal"}
+          isOpen={this.state.isOpen}
+        >
+           <Text style={styles.text}>Lose, 是否花{this.state.cost}個K寶石購買提示</Text>
            <Button
              title={`OK`}
-             onPress={this.addDiamonSuccess.bind(this)}
+             onPress={this.buyHint.bind(this)}
              style={styles.btn}>
           </Button>
           <Button
@@ -161,18 +178,26 @@ export default class TabTwoScreenOne extends React.Component {
             onPress={() => this.setState({isOpen: false})}
             style={styles.btn}>
          </Button>
-         </Modal>
+        </Modal>
+        <Modal
+          style={[styles.modal]}
+          position={"center"}
+          ref={"N_modal"}
+          isOpen={this.state.isOpen}
+        >
+          <View style={{flex:1, width:'100%', justifyContent:'center'}}>
+            <ScorePuzzle Submit={this.giveScore.bind(this)}/>
+            <Button
+              title={`Cancel`}
+              onPress={() => this.setState({isOpen: false})}
+              style={styles.btn}>
+           </Button>
+         </View>
+        </Modal>
       </View>
-
     )
   }
 }
-
-// <View>
-// <Button title={"123"}>
-// OnPress={() => alert("123")}
-// </Button>
-// </View>
 
 const styles = StyleSheet.create({
   container: {
@@ -187,10 +212,10 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: 1,
-    marginTop: Platform.OS == 'ios' ? 25 : 0,
   },
-  topBlankSpace: {
-
+  input: {
+    flex: 1,
+    paddingHorizontal: 10,
   },
   row1: {
     width: '100%',
@@ -280,23 +305,21 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   modal: {
-  justifyContent: 'center',
-  alignItems: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:300,
+    height:300,
+    borderWidth: 3,
+    borderColor:'rgba(252,252,252,0.5)',
+    borderRadius: 10,
+    shadowColor: "#000000",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 3,
+      width: 0
+    }
   },
-  modal2: {
-    height: 230,
-    backgroundColor: "#3B5998"
-  },
-
-  modal3: {
-    height: 300,
-    width: 300
-  },
-
-  modal4: {
-    height: 300
-  },
-
   btn: {
     margin: 10,
     backgroundColor: "#3B5998",
@@ -314,6 +337,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "black",
-    fontSize: 22
+    fontSize: 14
   }
 });

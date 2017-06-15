@@ -18,22 +18,85 @@ import * as Config from '../../constants/config';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
-
+import { getMyUser } from '../../api/api';
 const { width, height } = Dimensions.get("window");
 
+async function getFlagFromSetting() {
+    let response = await fetch(`http://${Config.SERVER_IP}:${Config.PORT}/get_setting`)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response[0];
+}
+async function getMyCountry() {
+  const userCountry = await AsyncStorage.getItem('@UserCountry');
+    let response = await fetch(
+      `http://${Config.SERVER_IP}:${Config.PORT}/get_my_country`,
+      {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify({
+          'country': userCountry,
+        })
+     }
+    )
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error(error);
+      return error;
+    });
+    return response[0];
+}
 export default class TabOneScreenOne extends React.Component {
   constructor(props) {
     super(props);
+    this.init();
     this.state = {
       isRefreshing: false,
-      board: '歡迎進入奇妙的世界！'
+      board: '',
+      country: '',
+      K: 0,
+      water: 0,
+      fire: 0,
+      wood: 0,
+      stone: 0,
+      seed: 0,
     };
+  }
+  async init() {
+    const table_flag = await getFlagFromSetting();
+    if (table_flag.changeToDay3 == 'T') {
+      const country = await getMyCountry();
+      this.setState({
+        K: country.K,
+        water: country.water,
+        fire: country.fire,
+        wood: country.wood,
+        stone: country.stone,
+        seed: country.seed,
+        isRefreshing: false
+      });
+    } else {
+      const user = await getMyUser();
+      this.setState({
+        K: user.K,
+        water: user.water,
+        fire: user.fire,
+        wood: user.wood,
+        stone: user.stone,
+        seed: user.seed,
+        isRefreshing: false
+      });
+    }
   }
   _onRefresh() {
     this.setState({isRefreshing: true});
-    setTimeout(() => {
-      this.setState({isRefreshing: false});
-    },500);
+    this.init();
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -67,9 +130,9 @@ export default class TabOneScreenOne extends React.Component {
   };
   componentDidMount() {
     FCM.on(FCMEvent.Notification, async (notif) => {
-      console.log(notif);
+      // console.log(notif);
       //Platform.OS()
-      alert('I recevied a message:');
+      // alert('I recevied a message:');
       // this.setState({
       //   board: notif.notification.body,
       // });
@@ -99,11 +162,12 @@ export default class TabOneScreenOne extends React.Component {
     });
   }
   render() {
+    console.log(this.state);
     return(
       <View
         style={{
           flex:1,
-          backgroundColor:'darkturquoise',
+          backgroundColor:'rgb(165,186,194)',
         }}>
         <ScrollView
           style={styles.contentContainer}     
@@ -119,62 +183,104 @@ export default class TabOneScreenOne extends React.Component {
             />
           }
         >
-        <View 
-            style={{
-              width:width,
-              height:height * 1,
-              backgroundColor:'darkturquoise',
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              }}
-            > 
-              <Text style={styles.text}>{this.state.board}</Text>
-          <TouchableOpacity
-            onPress={ async () => {
-              const value1 = await AsyncStorage.getItem('@User1');
-              console.log(value1);
-              fetch(`http://${Config.SERVER_IP}:${Config.PORT}/check_login`)
-              //this.props.navigation.navigate('TabOneDrawerTwo')
-              try {
-                const value = await AsyncStorage.getItem('@User');
-                if (value !== null){
-                  // We have data!!
-                  console.log(value);
-                }
-              } catch (error) {
-                console.log(error);
-              }
-              //console.log(this.props.navigation.state.params.data);
-            }}>
-            <Text>{'Go to next screen this tab'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={ () => {
-              FCM.getFCMToken().then(token => {
-                console.log(token);
-                alert(token);
-              });
-            }}>
-            <Text>{'dispatch Action Go to next screen this tab'}</Text>
-          </TouchableOpacity>
-        </View>
+            <Image 
+              style={{width:'100%',height:height*0.5, marginBottom:0, marginTop:22}} 
+              source={require('../../images/home/W1.png')}>
+            </Image>
+            <View style={{flex:1, width:'100%', height: '100%', flexDirection:'row', flexWrap: 'nowrap'}}>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/fire.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.fire}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/k.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.K}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/water.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.water}</Text>
+                  </View>
+                </Image>
+              </View>
+            </View>
+            <View style={{flex:1, width:'100%', height: '100%', flexDirection:'row', flexWrap: 'nowrap'}}>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/stone.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.stone}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/seed.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.seed}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/wood.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.wood}</Text>
+                  </View>
+                </Image>
+              </View>
+            </View>
+
         </ScrollView>
       </View>
     )
   }
 }
-console.log(height);
 const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     color: 'red',
-    backgroundColor: 'rgba(0,0,0,0)',
     fontSize: 32
   },
   contentContainer: {
     flex: 1,
-    marginTop: Platform.OS == 'ios' ? 25 : 0,
+    //marginTop: Platform.OS == 'ios' ? 25 : 0,
     height: height,
     width: width,
   },
+  source: {
+    flex: 1,
+    width: null,
+    height: null,
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  backdropView: {
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+  },
+  headline: {
+    marginTop:70,
+    fontSize: 20,
+    fontWeight: '400',
+    textAlign: 'center',
+    color: 'rgb(255,255,255)'
+  }
 });

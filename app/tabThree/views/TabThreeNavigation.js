@@ -29,7 +29,6 @@ class TabThreeNavigation extends React.Component {
 
   render() {
     const { dispatch, navigationState} = this.props
-    console.log(this.props);
     return (
         <NavigatorTabThree
           navigation={addNavigationHelpers({

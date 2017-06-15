@@ -43,6 +43,8 @@ async function login(value) {
       try {
         await AsyncStorage.setItem('@isLogined', 'Y');
         await AsyncStorage.setItem('@UserData', JSON.stringify(response.user));
+        await AsyncStorage.setItem('@UserCountry', response.user[0].country);
+        await AsyncStorage.setItem('@UserName', value.username);
       } catch (error) {
         console.log(error);
         // Error saving data
@@ -84,10 +86,10 @@ export default class LoginScreen extends React.Component {
   }
   render() {
     return(
-      <View style={[styles.container]}>
+      <ScrollView style={[styles.container]}>
         <LoginForm Submit={this.submit.bind(this)} wrong={this.state.wrong}/>
         <Spinner visible={this.state.visible} textContent={"Loading..."} textStyle={{color: '#FFF'}} />
-      </View>
+      </ScrollView>
     )
   }
 }

@@ -5,7 +5,7 @@ var SettingSchema = new mongoose.Schema({
   changeToDay3: String,
   reference: Number,
   day1_resource: Array,
-  day1_pizzle: Array,
+  day1_puzzle: Array,
   day3_land: Array,
   day3_resource: Array
 })

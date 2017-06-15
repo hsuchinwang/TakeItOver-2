@@ -13,9 +13,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const mapStateToProps = (state) => {
  return {
-  navigationState: state.tabTwo,
+    navigationState: state.tabTwo,
+    form: state.form,
   }
 }
+
 class TabTwoNavigation extends React.Component {
   static navigationOptions = {
     tabBarLabel: '解謎',
