@@ -242,7 +242,6 @@ var styles = StyleSheet.create({
   backdrop: {
     width: 300,
     height: 300,
-
   },
   ImageShadow: {
     borderWidth: 3,

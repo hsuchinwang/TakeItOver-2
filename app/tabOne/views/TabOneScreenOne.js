@@ -167,7 +167,7 @@ export default class TabOneScreenOne extends React.Component {
       <View
         style={{
           flex:1,
-          backgroundColor:'darkturquoise',
+          backgroundColor:'rgb(165,186,194)',
         }}>
         <ScrollView
           style={styles.contentContainer}     
@@ -183,45 +183,69 @@ export default class TabOneScreenOne extends React.Component {
             />
           }
         >
-        <View 
-            style={{
-              width:width,
-              height:height * 1,
-              backgroundColor:'darkturquoise',
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              }}
-            > 
-              <Text style={styles.text}>{this.state.board}</Text>
-          <TouchableOpacity
-            onPress={ async () => {
-              const value1 = await AsyncStorage.getItem('@User1');
-              console.log(value1);
-              fetch(`http://${Config.SERVER_IP}:${Config.PORT}/check_login`)
-              //this.props.navigation.navigate('TabOneDrawerTwo')
-              try {
-                const value = await AsyncStorage.getItem('@User');
-                if (value !== null){
-                  // We have data!!
-                  console.log(value);
-                }
-              } catch (error) {
-                console.log(error);
-              }
-              //console.log(this.props.navigation.state.params.data);
-            }}>
-            <Text>{'Go to next screen this tab'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={ () => {
-              FCM.getFCMToken().then(token => {
-                console.log(token);
-                alert(token);
-              });
-            }}>
-            <Text>{'dispatch Action Go to next screen this tab'}</Text>
-          </TouchableOpacity>
-        </View>
+            <Image 
+              style={{width:'100%',height:height*0.5, marginBottom:0, marginTop:22}} 
+              source={require('../../images/home/W1.png')}>
+            </Image>
+            <View style={{flex:1, width:'100%', height: '100%', flexDirection:'row', flexWrap: 'nowrap'}}>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/fire.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.fire}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/k.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.K}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/water.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.water}</Text>
+                  </View>
+                </Image>
+              </View>
+            </View>
+            <View style={{flex:1, width:'100%', height: '100%', flexDirection:'row', flexWrap: 'nowrap'}}>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/stone.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.stone}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/seed.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.seed}</Text>
+                  </View>
+                </Image>
+              </View>
+              <View style={{width:130, height:130, flexShrink:1}}>
+                <Image
+                  style={styles.source}
+                  source={require('../../images/home/wood.png')}>
+                  <View style={styles.backdropView}>
+                    <Text style={styles.headline}>{this.state.wood}</Text>
+                  </View>
+                </Image>
+              </View>
+            </View>
+
         </ScrollView>
       </View>
     )
@@ -231,13 +255,32 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     color: 'red',
-    backgroundColor: 'rgba(0,0,0,0)',
     fontSize: 32
   },
   contentContainer: {
     flex: 1,
-    marginTop: Platform.OS == 'ios' ? 25 : 0,
+    //marginTop: Platform.OS == 'ios' ? 25 : 0,
     height: height,
     width: width,
   },
+  source: {
+    flex: 1,
+    width: null,
+    height: null,
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  backdropView: {
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+  },
+  headline: {
+    marginTop:70,
+    fontSize: 20,
+    fontWeight: '400',
+    textAlign: 'center',
+    color: 'rgb(255,255,255)'
+  }
 });
